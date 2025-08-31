@@ -7,8 +7,8 @@
  * Verifies proper handling of Level1 data and Result<T> pattern.
  */
 
+import { getError, getValue, isFailure, isSuccess } from "@qi/base";
 import { Level1 } from "@qi/core";
-import { getData, getError, isFailure, isSuccess } from "@qi/core/base";
 import { getMidPrice, getSpread } from "@qi/dp/domain";
 import { describe, expect, it } from "vitest";
 
@@ -20,7 +20,7 @@ describe("Price Calculation Functions", () => {
       const result = getSpread(level1);
 
       expect(isSuccess(result)).toBe(true);
-      expect(getData(result)).toBe(0.25); // 100.50 - 100.25
+      expect(getValue(result)).toBe(0.25); // 100.50 - 100.25
       expect(getError(result)).toBeNull();
     });
 
@@ -29,10 +29,10 @@ describe("Price Calculation Functions", () => {
       const result = getSpread(level1);
 
       expect(isFailure(result)).toBe(true);
-      expect(getData(result)).toBeNull();
+      expect(getValue(result)).toBeNull();
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_PRICE");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.message).toBe("Bid and ask prices must be positive");
       expect(error?.category).toBe("VALIDATION");
     });
@@ -42,10 +42,10 @@ describe("Price Calculation Functions", () => {
       const result = getSpread(level1);
 
       expect(isFailure(result)).toBe(true);
-      expect(getData(result)).toBeNull();
+      expect(getValue(result)).toBeNull();
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_PRICE");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.message).toBe("Bid and ask prices must be positive");
       expect(error?.category).toBe("VALIDATION");
     });
@@ -55,10 +55,10 @@ describe("Price Calculation Functions", () => {
       const result = getSpread(level1);
 
       expect(isFailure(result)).toBe(true);
-      expect(getData(result)).toBeNull();
+      expect(getValue(result)).toBeNull();
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_PRICE");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.category).toBe("VALIDATION");
     });
 
@@ -67,10 +67,10 @@ describe("Price Calculation Functions", () => {
       const result = getSpread(level1);
 
       expect(isFailure(result)).toBe(true);
-      expect(getData(result)).toBeNull();
+      expect(getValue(result)).toBeNull();
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_PRICE");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.category).toBe("VALIDATION");
     });
 
@@ -79,10 +79,10 @@ describe("Price Calculation Functions", () => {
       const result = getSpread(level1);
 
       expect(isFailure(result)).toBe(true);
-      expect(getData(result)).toBeNull();
+      expect(getValue(result)).toBeNull();
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_SPREAD");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.message).toBe("Ask price must be greater than bid price");
       expect(error?.category).toBe("VALIDATION");
     });
@@ -92,10 +92,10 @@ describe("Price Calculation Functions", () => {
       const result = getSpread(level1);
 
       expect(isFailure(result)).toBe(true);
-      expect(getData(result)).toBeNull();
+      expect(getValue(result)).toBeNull();
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_SPREAD");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.message).toBe("Ask price must be greater than bid price");
       expect(error?.category).toBe("VALIDATION");
     });
@@ -105,7 +105,7 @@ describe("Price Calculation Functions", () => {
       const result = getSpread(level1);
 
       expect(isSuccess(result)).toBe(true);
-      expect(getData(result)).toBeCloseTo(0.01, 2);
+      expect(getValue(result)).toBeCloseTo(0.01, 2);
     });
 
     it("should calculate spread for large price differences", () => {
@@ -113,7 +113,7 @@ describe("Price Calculation Functions", () => {
       const result = getSpread(level1);
 
       expect(isSuccess(result)).toBe(true);
-      expect(getData(result)).toBe(50.0);
+      expect(getValue(result)).toBe(50.0);
     });
   });
 
@@ -123,7 +123,7 @@ describe("Price Calculation Functions", () => {
       const result = getMidPrice(level1);
 
       expect(isSuccess(result)).toBe(true);
-      expect(getData(result)).toBe(100.375); // (100.50 + 100.25) / 2
+      expect(getValue(result)).toBe(100.375); // (100.50 + 100.25) / 2
       expect(getError(result)).toBeNull();
     });
 
@@ -132,10 +132,10 @@ describe("Price Calculation Functions", () => {
       const result = getMidPrice(level1);
 
       expect(isFailure(result)).toBe(true);
-      expect(getData(result)).toBeNull();
+      expect(getValue(result)).toBeNull();
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_PRICE");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.message).toBe("Bid and ask prices must be positive");
       expect(error?.category).toBe("VALIDATION");
     });
@@ -145,10 +145,10 @@ describe("Price Calculation Functions", () => {
       const result = getMidPrice(level1);
 
       expect(isFailure(result)).toBe(true);
-      expect(getData(result)).toBeNull();
+      expect(getValue(result)).toBeNull();
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_PRICE");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.category).toBe("VALIDATION");
     });
 
@@ -159,7 +159,7 @@ describe("Price Calculation Functions", () => {
       expect(isFailure(result)).toBe(true);
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_PRICE");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.category).toBe("VALIDATION");
     });
 
@@ -170,7 +170,7 @@ describe("Price Calculation Functions", () => {
       expect(isFailure(result)).toBe(true);
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_SPREAD");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.category).toBe("VALIDATION");
     });
 
@@ -181,7 +181,7 @@ describe("Price Calculation Functions", () => {
       expect(isFailure(result)).toBe(true);
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_SPREAD");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.category).toBe("VALIDATION");
     });
 
@@ -190,7 +190,7 @@ describe("Price Calculation Functions", () => {
       const result = getMidPrice(level1);
 
       expect(isSuccess(result)).toBe(true);
-      expect(getData(result)).toBe(99.5); // (100.00 + 99.00) / 2
+      expect(getValue(result)).toBe(99.5); // (100.00 + 99.00) / 2
     });
 
     it("should calculate mid price with precision", () => {
@@ -198,7 +198,7 @@ describe("Price Calculation Functions", () => {
       const result = getMidPrice(level1);
 
       expect(isSuccess(result)).toBe(true);
-      expect(getData(result)).toBeCloseTo(100.122, 3);
+      expect(getValue(result)).toBeCloseTo(100.122, 3);
     });
 
     it("should handle large price values", () => {
@@ -206,7 +206,7 @@ describe("Price Calculation Functions", () => {
       const result = getMidPrice(level1);
 
       expect(isSuccess(result)).toBe(true);
-      expect(getData(result)).toBe(50000.375);
+      expect(getValue(result)).toBe(50000.375);
     });
   });
 
@@ -221,8 +221,8 @@ describe("Price Calculation Functions", () => {
       expect(isSuccess(spreadResult)).toBe(true);
       expect(isSuccess(midPriceResult)).toBe(true);
 
-      const spread = getData(spreadResult);
-      const midPrice = getData(midPriceResult);
+      const spread = getValue(spreadResult);
+      const midPrice = getValue(midPriceResult);
 
       expect(spread).toBe(1.75); // 50125.50 - 50123.75
       expect(midPrice).toBe(50124.625); // (50125.50 + 50123.75) / 2
@@ -240,8 +240,8 @@ describe("Price Calculation Functions", () => {
       const spreadError = getError(spreadResult);
       const midPriceError = getError(midPriceResult);
 
-      expect(spreadError?.code).toBe("INVALID_PRICE");
-      expect(midPriceError?.code).toBe("INVALID_PRICE");
+      expect(spreadError?.code).toBe("VALIDATION_ERROR");
+      expect(midPriceError?.code).toBe("VALIDATION_ERROR");
     });
   });
 });

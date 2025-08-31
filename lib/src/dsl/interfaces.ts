@@ -7,7 +7,7 @@
  * Removed FP prefixes and lifecycle interfaces for simplicity.
  */
 
-import type { ResultType as Result } from "@qi/core/base";
+import type { Result } from "@qi/base";
 import type { Level1, MarketContext, MarketSymbol, OHLCV, Price } from "./types.js";
 import type { TimeInterval } from "./utils.js";
 

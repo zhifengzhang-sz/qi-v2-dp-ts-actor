@@ -8,6 +8,7 @@
  * This approach ensures all readers behave consistently regardless of implementation.
  */
 
+import { type Result, getError, getValue, isFailure, isSuccess } from "@qi/base";
 import {
   Exchange,
   InstrumentType,
@@ -17,14 +18,12 @@ import {
   type OHLCV,
   type Price,
 } from "@qi/core";
-import { type ResultType as Result, getData, getError, isFailure, isSuccess } from "@qi/core/base";
 import { type TimeInterval, createTimeInterval } from "@qi/dp/utils";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
 import type { MarketDataReader } from "@qi/dp/dsl/interfaces";
 import { CCXTMCPReader } from "@qi/dp/market/crypto/sources/CCXTMCPReader";
 // Import all MarketDataReader implementations
-import { CoinGeckoMCPReader } from "@qi/dp/market/crypto/sources/CoinGeckoMCPReader";
 import { TwelveDataMCPReader } from "@qi/dp/market/multi-asset/sources/TwelveDataMCPReader";
 import { AlphaVantageMCPReader } from "@qi/dp/market/stock/sources/AlphaVantageMCPReader";
 
@@ -48,30 +47,6 @@ interface TestActorConfig {
 }
 
 // Mock MCP clients for different services
-function createMockCoinGeckoClient() {
-  return {
-    callTool: async (args: any) => {
-      // CoinGecko client will fail for some operations to test error handling
-      if (args.name === 'get_coins_markets') {
-        // This should fail to test error handling
-        throw new Error('CoinGecko mock failure for testing');
-      }
-      return {
-        content: [
-          {
-            text: JSON.stringify({
-              bitcoin: {
-                usd: 97500,
-                usd_market_cap: 1900000000000,
-                usd_24h_vol: 25000000000,
-              },
-            }),
-          },
-        ],
-      };
-    },
-  };
-}
 
 function createMockCCXTClient() {
   return {
@@ -151,7 +126,7 @@ function createMockTwelveDataClient() {
           };
         case "orderbook":
           // This should fail for readLevel1 testing
-          throw new Error('TwelveData mock failure for Level1 testing');
+          throw new Error("TwelveData mock failure for Level1 testing");
         default:
           throw new Error(`Unsupported TwelveData tool: ${args.name}`);
       }
@@ -206,7 +181,6 @@ function createMockAlphaVantageClient() {
 // =============================================================================
 
 // Set up test data at module level
-const coinGeckoExchange = Exchange.create("coingecko", "CoinGecko", "Global", "aggregated");
 const binanceExchange = Exchange.create("binance", "Binance", "Global", "centralized");
 const twelveDataExchange = Exchange.create("twelvedata", "Twelve Data", "Global", "aggregated");
 const stockExchange = Exchange.create("nasdaq", "NASDAQ", "US", "centralized");
@@ -232,89 +206,66 @@ const cryptoSymbolTwelve = MarketSymbol.create(
   "USD",
   InstrumentType.CASH,
 );
-const stockSymbol = MarketSymbol.create(
-  "AAPL",
-  "Apple Inc",
-  "equity",
-  "USD",
-  InstrumentType.CASH,
-);
+const stockSymbol = MarketSymbol.create("AAPL", "Apple Inc", "equity", "USD", InstrumentType.CASH);
 
 // Create test actors with their configurations at module level
 const testActors: TestActorConfig[] = [
-      {
-        name: "CoinGecko",
-        reader: new CoinGeckoMCPReader({
-          name: "test-coingecko",
-          mcpClient: createMockCoinGeckoClient(),
-        }),
-        symbol: cryptoSymbol,
-        context: MarketContext.create(coinGeckoExchange, cryptoSymbol),
-        supportedMethods: {
-          readPrice: false, // Mock failure for testing
-          readLevel1: false, // CoinGecko doesn't provide Level1
-          readOHLCV: false, // Mock failure for testing
-          readHistoricalPrices: true,
-          readHistoricalLevel1: false,
-          readHistoricalOHLCV: true,
-        },
-      },
-      {
-        name: "CCXT",
-        reader: new CCXTMCPReader({
-          name: "test-ccxt",
-          exchange: "binance",
-          mcpClient: createMockCCXTClient(),
-        }),
-        symbol: cryptoSymbolCCXT,
-        context: MarketContext.create(binanceExchange, cryptoSymbolCCXT),
-        supportedMethods: {
-          readPrice: true,
-          readLevel1: true,
-          readOHLCV: true,
-          readHistoricalPrices: true,
-          readHistoricalLevel1: false, // Not practical for CCXT
-          readHistoricalOHLCV: true,
-        },
-      },
-      {
-        name: "TwelveData",
-        reader: new TwelveDataMCPReader({
-          name: "test-twelvedata",
-          apiKey: "test-key",
-          assetClass: "crypto",
-          mcpClient: createMockTwelveDataClient(),
-        }),
-        symbol: cryptoSymbolTwelve,
-        context: MarketContext.create(twelveDataExchange, cryptoSymbolTwelve),
-        supportedMethods: {
-          readPrice: true,
-          readLevel1: false, // Mock failure for testing
-          readOHLCV: true,
-          readHistoricalPrices: true,
-          readHistoricalLevel1: true,
-          readHistoricalOHLCV: true,
-        },
-      },
-      {
-        name: "Alpha Vantage",
-        reader: new AlphaVantageMCPReader({
-          name: "test-alphavantage",
-          apiKey: "test-key",
-          mcpClient: createMockAlphaVantageClient(),
-        }),
-        symbol: stockSymbol,
-        context: MarketContext.create(stockExchange, stockSymbol),
-        supportedMethods: {
-          readPrice: true,
-          readLevel1: false, // Alpha Vantage doesn't provide Level1
-          readOHLCV: true,
-          readHistoricalPrices: true,
-          readHistoricalLevel1: false,
-          readHistoricalOHLCV: true,
-        },
-      },
-    ];
+  {
+    name: "CCXT",
+    reader: new CCXTMCPReader({
+      name: "test-ccxt",
+      exchange: "binance",
+      mcpClient: createMockCCXTClient(),
+    }),
+    symbol: cryptoSymbolCCXT,
+    context: MarketContext.create(binanceExchange, cryptoSymbolCCXT),
+    supportedMethods: {
+      readPrice: true,
+      readLevel1: true,
+      readOHLCV: true,
+      readHistoricalPrices: true,
+      readHistoricalLevel1: false, // Not practical for CCXT
+      readHistoricalOHLCV: true,
+    },
+  },
+  {
+    name: "TwelveData",
+    reader: new TwelveDataMCPReader({
+      name: "test-twelvedata",
+      apiKey: "test-key",
+      assetClass: "crypto",
+      mcpClient: createMockTwelveDataClient(),
+    }),
+    symbol: cryptoSymbolTwelve,
+    context: MarketContext.create(twelveDataExchange, cryptoSymbolTwelve),
+    supportedMethods: {
+      readPrice: true,
+      readLevel1: false, // Mock failure for testing
+      readOHLCV: true,
+      readHistoricalPrices: true,
+      readHistoricalLevel1: true,
+      readHistoricalOHLCV: true,
+    },
+  },
+  {
+    name: "Alpha Vantage",
+    reader: new AlphaVantageMCPReader({
+      name: "test-alphavantage",
+      apiKey: "test-key",
+      mcpClient: createMockAlphaVantageClient(),
+    }),
+    symbol: stockSymbol,
+    context: MarketContext.create(stockExchange, stockSymbol),
+    supportedMethods: {
+      readPrice: true,
+      readLevel1: false, // Alpha Vantage doesn't provide Level1
+      readOHLCV: true,
+      readHistoricalPrices: true,
+      readHistoricalLevel1: false,
+      readHistoricalOHLCV: true,
+    },
+  },
+];
 
 describe("MarketDataReader Interface - Unified DSL Testing", () => {
   beforeAll(async () => {
@@ -332,7 +283,7 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
         const result = await actor.reader.readPrice(actor.symbol, actor.context);
 
         expect(isSuccess(result)).toBe(true);
-        const priceData = getData(result);
+        const priceData = getValue(result);
         expect(priceData).not.toBeNull();
 
         const price = Array.isArray(priceData) ? priceData[0] : priceData;
@@ -355,7 +306,7 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
 
         expect(isFailure(result)).toBe(true);
         const error = getError(result);
-        expect(error?.category).toMatch(/BUSINESS|NETWORK|VALIDATION/);
+        expect(error?.category).toMatch(/BUSINESS|NETWORK|VALIDATION|SYSTEM/);
 
         console.log(`✅ ${actor.name}: Price reading properly failed - ${error?.message}`);
       },
@@ -366,8 +317,8 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
 
       // Should always return Result<T>, never throw
       expect(typeof result).toBe("object");
-      expect("_tag" in result).toBe(true);
-      expect(result._tag === "Left" || result._tag === "Right").toBe(true);
+      expect("tag" in result).toBe(true);
+      expect(result.tag === "failure" || result.tag === "success").toBe(true);
     });
   });
 
@@ -378,7 +329,7 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
         const result = await actor.reader.readLevel1(actor.symbol, actor.context);
 
         expect(isSuccess(result)).toBe(true);
-        const level1Data = getData(result);
+        const level1Data = getValue(result);
         expect(level1Data).not.toBeNull();
 
         const level1 = Array.isArray(level1Data) ? level1Data[0] : level1Data;
@@ -403,7 +354,7 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
 
         expect(isFailure(result)).toBe(true);
         const error = getError(result);
-        expect(error?.category).toMatch(/BUSINESS|UNSUPPORTED/);
+        expect(error?.category).toMatch(/BUSINESS|UNSUPPORTED|SYSTEM/);
 
         console.log(`✅ ${actor.name}: Level1 properly unsupported - ${error?.message}`);
       },
@@ -417,7 +368,7 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
         const result = await actor.reader.readOHLCV(actor.symbol, actor.context);
 
         expect(isSuccess(result)).toBe(true);
-        const ohlcvData = getData(result);
+        const ohlcvData = getValue(result);
         expect(ohlcvData).not.toBeNull();
 
         const ohlcv = Array.isArray(ohlcvData) ? ohlcvData[0] : ohlcvData;
@@ -450,7 +401,7 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
 
         expect(isFailure(result)).toBe(true);
         const error = getError(result);
-        expect(error?.category).toMatch(/BUSINESS|NETWORK|VALIDATION/);
+        expect(error?.category).toMatch(/BUSINESS|NETWORK|VALIDATION|SYSTEM/);
 
         console.log(`✅ ${actor.name}: OHLCV reading properly failed - ${error?.message}`);
       },
@@ -473,7 +424,7 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
         );
 
         if (isSuccess(result)) {
-          const prices = getData(result) as Price[];
+          const prices = getValue(result) as Price[];
           expect(Array.isArray(prices)).toBe(true);
 
           for (const price of prices) {
@@ -499,7 +450,7 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
         );
 
         if (isSuccess(result)) {
-          const ohlcvArray = getData(result) as OHLCV[];
+          const ohlcvArray = getValue(result) as OHLCV[];
           expect(Array.isArray(ohlcvArray)).toBe(true);
 
           for (const ohlcv of ohlcvArray) {
@@ -533,11 +484,11 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
 
       // Should return Result<T> (not throw) and likely fail
       expect(typeof result).toBe("object");
-      expect("_tag" in result).toBe(true);
+      expect("tag" in result).toBe(true);
 
       if (isFailure(result)) {
         const error = getError(result);
-        expect(error?.category).toMatch(/BUSINESS|NETWORK|VALIDATION/);
+        expect(error?.category).toMatch(/BUSINESS|NETWORK|VALIDATION|SYSTEM/);
         console.log(`✅ ${actor.name}: Invalid symbol handled - ${error?.message}`);
       } else {
         console.log(`✅ ${actor.name}: Invalid symbol unexpectedly succeeded`);
@@ -575,7 +526,7 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
       if (actor.supportedMethods.readPrice) {
         const priceResult = await actor.reader.readPrice(actor.symbol, actor.context);
         if (isSuccess(priceResult)) {
-          const priceData = getData(priceResult);
+          const priceData = getValue(priceResult);
           const price = Array.isArray(priceData) ? priceData[0] : priceData;
 
           // Verify Price object structure
@@ -594,7 +545,7 @@ describe("MarketDataReader Interface - Unified DSL Testing", () => {
       if (actor.supportedMethods.readOHLCV) {
         const ohlcvResult = await actor.reader.readOHLCV(actor.symbol, actor.context);
         if (isSuccess(ohlcvResult)) {
-          const ohlcvData = getData(ohlcvResult);
+          const ohlcvData = getValue(ohlcvResult);
           const ohlcv = Array.isArray(ohlcvData) ? ohlcvData[0] : ohlcvData;
 
           // Verify OHLCV object structure

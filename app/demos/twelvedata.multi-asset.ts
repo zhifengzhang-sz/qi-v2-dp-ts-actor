@@ -10,6 +10,7 @@
 
 import type { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js";
+import { getValue, isSuccess } from "@qi/base";
 import {
   Exchange,
   InstrumentType,
@@ -17,7 +18,6 @@ import {
   MarketSymbol,
   createLastNHoursInterval,
 } from "@qi/core";
-import { getData, isSuccess } from "@qi/core/base";
 
 // Domain functions (business logic)
 import { getSpread } from "@qi/dp/domain";
@@ -194,7 +194,7 @@ async function testCryptocurrencyData() {
     console.log(`   Ask: $${level1.askPrice.toLocaleString()}`);
     const spreadResult = getSpread(level1);
     if (isSuccess(spreadResult)) {
-      const spreadData = getData(spreadResult);
+      const spreadData = getValue(spreadResult);
       if (spreadData !== null) {
         console.log(`   Spread: $${spreadData.toFixed(2)}`);
       } else {

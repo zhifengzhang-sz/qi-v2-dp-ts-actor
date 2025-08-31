@@ -23,10 +23,34 @@ git clone <repository-url>
 cd qi-v2-dp-ts-actor
 bun install
 
+# Start external services (optional - for streaming/storage)
+bun run services:start
+
 # Run demos with live data
 bun run app/demos/platform.validation.ts      # See all integrations working
 bun run app/demos/coingecko.live-data.ts      # Live Bitcoin prices
 bun run app/demos/twelvedata.multi-asset.ts   # Multi-asset data
+```
+
+## Dependencies
+
+**QiCore Foundation**: This project uses the external [QiCore](../qi-v2-qicore/typescript) foundation for:
+- **@qi/base**: Result<T> error handling, QiError types
+- **@qi/core**: Configuration, logging, and caching infrastructure
+
+**External Services**: Infrastructure services are managed separately in [qi-v2-services](../qi-v2-services):
+- **Redpanda**: Kafka-compatible streaming platform
+- **TimescaleDB**: Time-series database for market data
+- **ClickHouse**: Columnar database for analytics
+
+```bash
+# Start external services (from parent directory)
+cd ../qi-v2-services && docker compose up -d
+
+# Or use our convenience scripts
+bun run services:start    # Start all services
+bun run services:stop     # Stop all services  
+bun run services:logs     # View service logs
 ```
 
 ## Project Structure
@@ -47,7 +71,6 @@ qi-v2-dp-ts-actor/
 │   │   └── stock/actors/sources/     # Stock market sources
 │   │       └── AlphaVantageMCPReader.ts # NASDAQ-licensed stock data
 │   ├── domain/                       # Business logic and calculations
-│   ├── qicore/base/                  # Functional error handling (Result<T>)
 │   └── utils/                        # Time intervals and utilities
 ├── app/demos/                        # Working examples with live data
 ├── lib/tests/                        # Integration tests (35 tests, no mocks)

@@ -9,6 +9,7 @@
 
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+import { getValue, isSuccess } from "@qi/base";
 import {
   Exchange,
   InstrumentType,
@@ -16,7 +17,6 @@ import {
   MarketSymbol,
   createLastNHoursInterval,
 } from "@qi/core";
-import { getData, isSuccess } from "@qi/core/base";
 import { CCXTMCPReader } from "@qi/dp/market/crypto/sources";
 
 // Domain functions (business logic)
@@ -151,8 +151,8 @@ async function testCCXTActorWithRealServer() {
       const midPriceResult = getMidPrice(btcLevel1);
 
       if (isSuccess(spreadResult) && isSuccess(midPriceResult)) {
-        const spread = getData(spreadResult);
-        const midPrice = getData(midPriceResult);
+        const spread = getValue(spreadResult);
+        const midPrice = getValue(midPriceResult);
         if (spread !== null && midPrice !== null) {
           console.log(
             `   Spread: $${spread.toFixed(2)} (${((spread / midPrice) * 100).toFixed(4)}%)`,
@@ -207,7 +207,7 @@ async function testCCXTActorWithRealServer() {
 
       const historicalResult = await reader.readPrice(btcSymbol, btcContext, last24h);
       if (isSuccess(historicalResult)) {
-        const historicalData = getData(historicalResult);
+        const historicalData = getValue(historicalResult);
         if (historicalData !== null) {
           const historicalArray = Array.isArray(historicalData) ? historicalData : [historicalData];
 

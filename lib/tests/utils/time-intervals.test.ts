@@ -7,7 +7,7 @@
  * Verifies creation, validation, and manipulation of time intervals.
  */
 
-import { getData, getError, isFailure, isSuccess } from "@qi/core/base";
+import { getError, getValue, isFailure, isSuccess } from "@qi/base";
 import {
   type TimeInterval,
   createLastNDaysInterval,
@@ -169,7 +169,7 @@ describe("Time Interval Utilities", () => {
       const result = validateTimeInterval(interval);
 
       expect(isSuccess(result)).toBe(true);
-      expect(getData(result)).toBeUndefined();
+      expect(getValue(result)).toBeUndefined();
       expect(getError(result)).toBeNull();
     });
 
@@ -179,10 +179,10 @@ describe("Time Interval Utilities", () => {
       const result = validateTimeInterval(interval);
 
       expect(isFailure(result)).toBe(true);
-      expect(getData(result)).toBeNull();
+      expect(getValue(result)).toBeNull();
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_INTERVAL");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.message).toBe("Start date must be before end date");
       expect(error?.category).toBe("VALIDATION");
     });
@@ -196,7 +196,7 @@ describe("Time Interval Utilities", () => {
       expect(isFailure(result)).toBe(true);
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_INTERVAL");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.message).toBe("Start date must be before end date");
       expect(error?.category).toBe("VALIDATION");
     });
@@ -211,7 +211,7 @@ describe("Time Interval Utilities", () => {
       expect(isFailure(result)).toBe(true);
 
       const error = getError(result);
-      expect(error?.code).toBe("INVALID_INTERVAL");
+      expect(error?.code).toBe("VALIDATION_ERROR");
       expect(error?.message).toBe("End date cannot be in the future");
       expect(error?.category).toBe("VALIDATION");
     });

@@ -7,6 +7,7 @@
  * Focuses on type safety and interface contracts without mocking external systems.
  */
 
+import { type Result, failure, success, systemError, validationError } from "@qi/base";
 import type {
   CapabilityInfo,
   CapabilityReporter,
@@ -26,7 +27,6 @@ import {
   OHLCV,
   Price,
 } from "@qi/core";
-import { type ResultType as Result, createQiError, failure, success } from "@qi/core/base";
 import { type TimeInterval, createTimeInterval } from "@qi/dp/utils";
 import { describe, expect, it } from "vitest";
 
@@ -224,7 +224,7 @@ describe("DSL Interfaces", () => {
           interval?: TimeInterval,
         ): Promise<Result<Price | Price[]>> {
           if (this.shouldFail) {
-            return failure(createQiError("READ_FAILED", "Price read failed", "NETWORK"));
+            return failure(systemError("Price read failed", { code: "READ_FAILED" }));
           }
           return success(testPrice);
         }
@@ -235,7 +235,7 @@ describe("DSL Interfaces", () => {
           interval?: TimeInterval,
         ): Promise<Result<Level1 | Level1[]>> {
           if (this.shouldFail) {
-            return failure(createQiError("READ_FAILED", "Level1 read failed", "NETWORK"));
+            return failure(systemError("Level1 read failed", { code: "READ_FAILED" }));
           }
           return success(testLevel1);
         }
@@ -246,7 +246,7 @@ describe("DSL Interfaces", () => {
           interval?: TimeInterval,
         ): Promise<Result<OHLCV | OHLCV[]>> {
           if (this.shouldFail) {
-            return failure(createQiError("READ_FAILED", "OHLCV read failed", "NETWORK"));
+            return failure(systemError("OHLCV read failed", { code: "READ_FAILED" }));
           }
           return success(testOHLCV);
         }
@@ -257,9 +257,7 @@ describe("DSL Interfaces", () => {
           interval: TimeInterval,
         ): Promise<Result<Price[]>> {
           if (this.shouldFail) {
-            return failure(
-              createQiError("READ_FAILED", "Historical prices read failed", "NETWORK"),
-            );
+            return failure(systemError("Historical prices read failed", { code: "READ_FAILED" }));
           }
           return success([testPrice]);
         }
@@ -270,9 +268,7 @@ describe("DSL Interfaces", () => {
           interval: TimeInterval,
         ): Promise<Result<Level1[]>> {
           if (this.shouldFail) {
-            return failure(
-              createQiError("READ_FAILED", "Historical Level1 read failed", "NETWORK"),
-            );
+            return failure(systemError("Historical Level1 read failed", { code: "READ_FAILED" }));
           }
           return success([testLevel1]);
         }
@@ -283,7 +279,7 @@ describe("DSL Interfaces", () => {
           interval: TimeInterval,
         ): Promise<Result<OHLCV[]>> {
           if (this.shouldFail) {
-            return failure(createQiError("READ_FAILED", "Historical OHLCV read failed", "NETWORK"));
+            return failure(systemError("Historical OHLCV read failed", { code: "READ_FAILED" }));
           }
           return success([testOHLCV]);
         }
@@ -293,18 +289,18 @@ describe("DSL Interfaces", () => {
 
       // Test success cases
       const priceResult = await reader.readPrice(testSymbol, testContext);
-      expect(priceResult._tag).toBe("Right");
+      expect(priceResult.tag).toBe("success");
 
       const level1Result = await reader.readLevel1(testSymbol, testContext);
-      expect(level1Result._tag).toBe("Right");
+      expect(level1Result.tag).toBe("success");
 
       // Test failure cases
       reader.setFailureMode(true);
       const failedPriceResult = await reader.readPrice(testSymbol, testContext);
-      expect(failedPriceResult._tag).toBe("Left");
+      expect(failedPriceResult.tag).toBe("failure");
 
       const failedLevel1Result = await reader.readLevel1(testSymbol, testContext);
-      expect(failedLevel1Result._tag).toBe("Left");
+      expect(failedLevel1Result.tag).toBe("failure");
     });
   });
 
@@ -383,7 +379,7 @@ describe("DSL Interfaces", () => {
           context: MarketContext,
         ): Promise<Result<void>> {
           if (this.shouldFail) {
-            return failure(createQiError("WRITE_FAILED", "Price write failed", "NETWORK"));
+            return failure(systemError("Price write failed", { code: "WRITE_FAILED" }));
           }
           return success(void 0);
         }
@@ -394,7 +390,7 @@ describe("DSL Interfaces", () => {
           context: MarketContext,
         ): Promise<Result<void>> {
           if (this.shouldFail) {
-            return failure(createQiError("WRITE_FAILED", "Level1 write failed", "NETWORK"));
+            return failure(systemError("Level1 write failed", { code: "WRITE_FAILED" }));
           }
           return success(void 0);
         }
@@ -405,7 +401,7 @@ describe("DSL Interfaces", () => {
           context: MarketContext,
         ): Promise<Result<void>> {
           if (this.shouldFail) {
-            return failure(createQiError("WRITE_FAILED", "OHLCV write failed", "NETWORK"));
+            return failure(systemError("OHLCV write failed", { code: "WRITE_FAILED" }));
           }
           return success(void 0);
         }
@@ -416,7 +412,7 @@ describe("DSL Interfaces", () => {
           context: MarketContext,
         ): Promise<Result<void>> {
           if (this.shouldFail) {
-            return failure(createQiError("WRITE_FAILED", "Batch prices write failed", "NETWORK"));
+            return failure(systemError("Batch prices write failed", { code: "WRITE_FAILED" }));
           }
           return success(void 0);
         }
@@ -427,7 +423,7 @@ describe("DSL Interfaces", () => {
           context: MarketContext,
         ): Promise<Result<void>> {
           if (this.shouldFail) {
-            return failure(createQiError("WRITE_FAILED", "Batch Level1 write failed", "NETWORK"));
+            return failure(systemError("Batch Level1 write failed", { code: "WRITE_FAILED" }));
           }
           return success(void 0);
         }
@@ -438,7 +434,7 @@ describe("DSL Interfaces", () => {
           context: MarketContext,
         ): Promise<Result<void>> {
           if (this.shouldFail) {
-            return failure(createQiError("WRITE_FAILED", "Batch OHLCV write failed", "NETWORK"));
+            return failure(systemError("Batch OHLCV write failed", { code: "WRITE_FAILED" }));
           }
           return success(void 0);
         }
@@ -448,18 +444,18 @@ describe("DSL Interfaces", () => {
 
       // Test success cases
       const priceResult = await writer.writePrice(testPrice, testSymbol, testContext);
-      expect(priceResult._tag).toBe("Right");
+      expect(priceResult.tag).toBe("success");
 
       const batchResult = await writer.writePrices([testPrice], testSymbol, testContext);
-      expect(batchResult._tag).toBe("Right");
+      expect(batchResult.tag).toBe("success");
 
       // Test failure cases
       writer.setFailureMode(true);
       const failedPriceResult = await writer.writePrice(testPrice, testSymbol, testContext);
-      expect(failedPriceResult._tag).toBe("Left");
+      expect(failedPriceResult.tag).toBe("failure");
 
       const failedBatchResult = await writer.writePrices([testPrice], testSymbol, testContext);
-      expect(failedBatchResult._tag).toBe("Left");
+      expect(failedBatchResult.tag).toBe("failure");
     });
   });
 
@@ -550,8 +546,8 @@ describe("DSL Interfaces", () => {
         receivedLevel1 = level1;
       });
 
-      expect(priceResult._tag).toBe("Right");
-      expect(level1Result._tag).toBe("Right");
+      expect(priceResult.tag).toBe("success");
+      expect(level1Result.tag).toBe("success");
 
       // Wait for callbacks to be called
       await new Promise((resolve) => setTimeout(resolve, 10));

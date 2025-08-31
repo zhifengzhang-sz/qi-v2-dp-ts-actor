@@ -1,1 +1,2032 @@
-{"numTotalTestSuites":68,"numPassedTestSuites":68,"numFailedTestSuites":0,"numPendingTestSuites":0,"numTotalTests":191,"numPassedTests":191,"numFailedTests":0,"numPendingTests":0,"numTodoTests":0,"snapshot":{"added":0,"failure":false,"filesAdded":0,"filesRemoved":0,"filesRemovedList":[],"filesUnmatched":0,"filesUpdated":0,"matched":0,"total":0,"unchecked":0,"uncheckedKeysByFile":[],"unmatched":0,"updated":0,"didUpdate":false},"startTime":1752168650369,"success":true,"testResults":[{"assertionResults":[{"ancestorTitles":["Price Calculation Functions","getSpread"],"fullName":"Price Calculation Functions getSpread should calculate spread correctly for valid Level1 data","status":"passed","title":"should calculate spread correctly for valid Level1 data","duration":0.7679989999999748,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getSpread"],"fullName":"Price Calculation Functions getSpread should return failure for negative bid price","status":"passed","title":"should return failure for negative bid price","duration":0.24642399999999043,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getSpread"],"fullName":"Price Calculation Functions getSpread should return failure for negative ask price","status":"passed","title":"should return failure for negative ask price","duration":0.16741500000000542,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getSpread"],"fullName":"Price Calculation Functions getSpread should return failure for zero bid price","status":"passed","title":"should return failure for zero bid price","duration":0.10223600000000488,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getSpread"],"fullName":"Price Calculation Functions getSpread should return failure for zero ask price","status":"passed","title":"should return failure for zero ask price","duration":0.08080899999998792,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getSpread"],"fullName":"Price Calculation Functions getSpread should return failure when ask price equals bid price","status":"passed","title":"should return failure when ask price equals bid price","duration":0.11723899999998366,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getSpread"],"fullName":"Price Calculation Functions getSpread should return failure when ask price is less than bid price","status":"passed","title":"should return failure when ask price is less than bid price","duration":0.09495700000002216,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getSpread"],"fullName":"Price Calculation Functions getSpread should calculate spread for small price differences","status":"passed","title":"should calculate spread for small price differences","duration":0.09377900000004047,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getSpread"],"fullName":"Price Calculation Functions getSpread should calculate spread for large price differences","status":"passed","title":"should calculate spread for large price differences","duration":0.18624399999998786,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getMidPrice"],"fullName":"Price Calculation Functions getMidPrice should calculate mid price correctly for valid Level1 data","status":"passed","title":"should calculate mid price correctly for valid Level1 data","duration":0.10864500000002408,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getMidPrice"],"fullName":"Price Calculation Functions getMidPrice should return failure for negative bid price","status":"passed","title":"should return failure for negative bid price","duration":0.10249199999998382,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getMidPrice"],"fullName":"Price Calculation Functions getMidPrice should return failure for negative ask price","status":"passed","title":"should return failure for negative ask price","duration":0.06334100000003673,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getMidPrice"],"fullName":"Price Calculation Functions getMidPrice should return failure for zero prices","status":"passed","title":"should return failure for zero prices","duration":0.05031200000001945,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getMidPrice"],"fullName":"Price Calculation Functions getMidPrice should return failure when ask price equals bid price","status":"passed","title":"should return failure when ask price equals bid price","duration":0.052413000000001375,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getMidPrice"],"fullName":"Price Calculation Functions getMidPrice should return failure when ask price is less than bid price","status":"passed","title":"should return failure when ask price is less than bid price","duration":0.04689100000001645,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getMidPrice"],"fullName":"Price Calculation Functions getMidPrice should calculate mid price for equal spread","status":"passed","title":"should calculate mid price for equal spread","duration":0.06418100000001914,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getMidPrice"],"fullName":"Price Calculation Functions getMidPrice should calculate mid price with precision","status":"passed","title":"should calculate mid price with precision","duration":0.04622499999999263,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","getMidPrice"],"fullName":"Price Calculation Functions getMidPrice should handle large price values","status":"passed","title":"should handle large price values","duration":0.03700600000001941,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","Function Integration"],"fullName":"Price Calculation Functions Function Integration should work together for real market data","status":"passed","title":"should work together for real market data","duration":0.06909400000000687,"failureMessages":[],"meta":{}},{"ancestorTitles":["Price Calculation Functions","Function Integration"],"fullName":"Price Calculation Functions Function Integration should both fail for the same invalid data","status":"passed","title":"should both fail for the same invalid data","duration":0.06284099999999171,"failureMessages":[],"meta":{}}],"startTime":1752168650725,"endTime":1752168650728.069,"status":"passed","message":"","name":"/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/domain/price-calculations.test.ts"},{"assertionResults":[{"ancestorTitles":["DSL Interfaces","CapabilityInfo"],"fullName":"DSL Interfaces CapabilityInfo should define complete capability information structure","status":"passed","title":"should define complete capability information structure","duration":1.2563860000000204,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Interfaces","CapabilityInfo"],"fullName":"DSL Interfaces CapabilityInfo should allow optional rate limits","status":"passed","title":"should allow optional rate limits","duration":0.09768299999996088,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Interfaces","CapabilityReporter Interface"],"fullName":"DSL Interfaces CapabilityReporter Interface should implement all required methods","status":"passed","title":"should implement all required methods","duration":0.21682299999997667,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Interfaces","MarketDataReader Interface"],"fullName":"DSL Interfaces MarketDataReader Interface should define all required read methods","status":"passed","title":"should define all required read methods","duration":0.1402259999999842,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Interfaces","MarketDataReader Interface"],"fullName":"DSL Interfaces MarketDataReader Interface should handle success and failure cases","status":"passed","title":"should handle success and failure cases","duration":0.21345099999996364,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Interfaces","MarketDataWriter Interface"],"fullName":"DSL Interfaces MarketDataWriter Interface should define all required write methods","status":"passed","title":"should define all required write methods","duration":0.13184799999999086,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Interfaces","MarketDataWriter Interface"],"fullName":"DSL Interfaces MarketDataWriter Interface should handle success and failure cases","status":"passed","title":"should handle success and failure cases","duration":0.16937200000000985,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Interfaces","StreamingReader Interface"],"fullName":"DSL Interfaces StreamingReader Interface should define all required streaming methods","status":"passed","title":"should define all required streaming methods","duration":0.08368200000001025,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Interfaces","StreamingReader Interface"],"fullName":"DSL Interfaces StreamingReader Interface should handle callback functions correctly","status":"passed","title":"should handle callback functions correctly","duration":10.740251,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Interfaces","Composite Interfaces"],"fullName":"DSL Interfaces Composite Interfaces should implement MarketDataProvider interface","status":"passed","title":"should implement MarketDataProvider interface","duration":0.1885599999999954,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Interfaces","Composite Interfaces"],"fullName":"DSL Interfaces Composite Interfaces should implement MarketDataBridge interface","status":"passed","title":"should implement MarketDataBridge interface","duration":0.12066800000002331,"failureMessages":[],"meta":{}}],"startTime":1752168650709,"endTime":1752168650723.1206,"status":"passed","message":"","name":"/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/dsl/interfaces.test.ts"},{"assertionResults":[{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readPrice"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should read current price for 'CCXT'","status":"passed","title":"should read current price for 'CCXT'","duration":8.664479999999969,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readPrice"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should read current price for 'TwelveData'","status":"passed","title":"should read current price for 'TwelveData'","duration":0.4611250000000382,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readPrice"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should read current price for 'Alpha Vantage'","status":"passed","title":"should read current price for 'Alpha Vantage'","duration":0.3559309999999982,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readPrice"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should handle unsupported price reading gracefully for 'CoinGecko'","status":"passed","title":"should handle unsupported price reading gracefully for 'CoinGecko'","duration":0.39855099999999766,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readPrice"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should return Result<T> type for 'CoinGecko' (never throw)","status":"passed","title":"should return Result<T> type for 'CoinGecko' (never throw)","duration":0.153282000000047,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readPrice"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should return Result<T> type for 'CCXT' (never throw)","status":"passed","title":"should return Result<T> type for 'CCXT' (never throw)","duration":0.07967100000001892,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readPrice"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should return Result<T> type for 'TwelveData' (never throw)","status":"passed","title":"should return Result<T> type for 'TwelveData' (never throw)","duration":0.05338499999999158,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readPrice"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should return Result<T> type for 'Alpha Vantage' (never throw)","status":"passed","title":"should return Result<T> type for 'Alpha Vantage' (never throw)","duration":0.049172999999996136,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readLevel1"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readLevel1 should read Level1 data for 'CCXT'","status":"passed","title":"should read Level1 data for 'CCXT'","duration":0.4785969999999793,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readLevel1"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readLevel1 should handle unsupported Level1 gracefully for 'CoinGecko'","status":"passed","title":"should handle unsupported Level1 gracefully for 'CoinGecko'","duration":0.22386399999999185,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readLevel1"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readLevel1 should handle unsupported Level1 gracefully for 'TwelveData'","status":"passed","title":"should handle unsupported Level1 gracefully for 'TwelveData'","duration":0.2270859999999857,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readLevel1"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readLevel1 should handle unsupported Level1 gracefully for 'Alpha Vantage'","status":"passed","title":"should handle unsupported Level1 gracefully for 'Alpha Vantage'","duration":0.28921499999995604,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readOHLCV"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readOHLCV should read OHLCV data for 'CCXT'","status":"passed","title":"should read OHLCV data for 'CCXT'","duration":0.4867970000000241,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readOHLCV"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readOHLCV should read OHLCV data for 'TwelveData'","status":"passed","title":"should read OHLCV data for 'TwelveData'","duration":0.3709610000000225,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readOHLCV"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readOHLCV should read OHLCV data for 'Alpha Vantage'","status":"passed","title":"should read OHLCV data for 'Alpha Vantage'","duration":0.28619699999995873,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - readOHLCV"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - readOHLCV should handle unsupported OHLCV reading gracefully for 'CoinGecko'","status":"passed","title":"should handle unsupported OHLCV reading gracefully for 'CoinGecko'","duration":0.263924999999972,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Historical Data Methods"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical prices for 'CoinGecko'","status":"passed","title":"should read historical prices for 'CoinGecko'","duration":0.23226799999997638,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Historical Data Methods"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical prices for 'CCXT'","status":"passed","title":"should read historical prices for 'CCXT'","duration":0.17083100000002105,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Historical Data Methods"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical prices for 'TwelveData'","status":"passed","title":"should read historical prices for 'TwelveData'","duration":0.37634199999996554,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Historical Data Methods"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical prices for 'Alpha Vantage'","status":"passed","title":"should read historical prices for 'Alpha Vantage'","duration":0.15196500000001834,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Historical Data Methods"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical OHLCV for 'CoinGecko'","status":"passed","title":"should read historical OHLCV for 'CoinGecko'","duration":0.13698499999998148,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Historical Data Methods"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical OHLCV for 'CCXT'","status":"passed","title":"should read historical OHLCV for 'CCXT'","duration":0.10265300000003208,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Historical Data Methods"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical OHLCV for 'TwelveData'","status":"passed","title":"should read historical OHLCV for 'TwelveData'","duration":0.17577799999997978,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Historical Data Methods"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical OHLCV for 'Alpha Vantage'","status":"passed","title":"should read historical OHLCV for 'Alpha Vantage'","duration":0.11656199999998762,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Error Handling Consistency"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should handle invalid symbols consistently for 'CoinGecko'","status":"passed","title":"should handle invalid symbols consistently for 'CoinGecko'","duration":0.2615780000000427,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Error Handling Consistency"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should handle invalid symbols consistently for 'CCXT'","status":"passed","title":"should handle invalid symbols consistently for 'CCXT'","duration":0.10893600000002834,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Error Handling Consistency"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should handle invalid symbols consistently for 'TwelveData'","status":"passed","title":"should handle invalid symbols consistently for 'TwelveData'","duration":0.07689499999997906,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Error Handling Consistency"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should handle invalid symbols consistently for 'Alpha Vantage'","status":"passed","title":"should handle invalid symbols consistently for 'Alpha Vantage'","duration":0.08687299999996867,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Error Handling Consistency"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should validate asset class compatibility for 'CoinGecko'","status":"passed","title":"should validate asset class compatibility for 'CoinGecko'","duration":0.19046800000000985,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Error Handling Consistency"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should validate asset class compatibility for 'CCXT'","status":"passed","title":"should validate asset class compatibility for 'CCXT'","duration":0.13903300000004037,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Error Handling Consistency"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should validate asset class compatibility for 'TwelveData'","status":"passed","title":"should validate asset class compatibility for 'TwelveData'","duration":0.11779100000001108,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Error Handling Consistency"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should validate asset class compatibility for 'Alpha Vantage'","status":"passed","title":"should validate asset class compatibility for 'Alpha Vantage'","duration":0.07344799999998486,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Type Safety"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Type Safety should return properly typed data structures for 'CoinGecko'","status":"passed","title":"should return properly typed data structures for 'CoinGecko'","duration":0.13934000000000424,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Type Safety"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Type Safety should return properly typed data structures for 'CCXT'","status":"passed","title":"should return properly typed data structures for 'CCXT'","duration":1.3367939999999976,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Type Safety"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Type Safety should return properly typed data structures for 'TwelveData'","status":"passed","title":"should return properly typed data structures for 'TwelveData'","duration":0.5430719999999951,"failureMessages":[],"meta":{}},{"ancestorTitles":["MarketDataReader Interface - Unified DSL Testing","DSL Interface - Type Safety"],"fullName":"MarketDataReader Interface - Unified DSL Testing DSL Interface - Type Safety should return properly typed data structures for 'Alpha Vantage'","status":"passed","title":"should return properly typed data structures for 'Alpha Vantage'","duration":0.43993000000000393,"failureMessages":[],"meta":{}}],"startTime":1752168650711,"endTime":1752168650729.44,"status":"passed","message":"","name":"/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/dsl/market-data-reader-interface.test.ts"},{"assertionResults":[{"ancestorTitles":["DSL Core Types","Price"],"fullName":"DSL Core Types Price should create Price with correct properties","status":"passed","title":"should create Price with correct properties","duration":0.6809049999999957,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Price"],"fullName":"DSL Core Types Price should have readonly properties","status":"passed","title":"should have readonly properties","duration":0.12774299999995264,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Price"],"fullName":"DSL Core Types Price should compare equality correctly","status":"passed","title":"should compare equality correctly","duration":0.10518000000001848,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Price"],"fullName":"DSL Core Types Price should handle different timestamps in equality","status":"passed","title":"should handle different timestamps in equality","duration":0.05729199999996126,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Price"],"fullName":"DSL Core Types Price should generate meaningful string representation","status":"passed","title":"should generate meaningful string representation","duration":0.31446799999997666,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","OHLCV"],"fullName":"DSL Core Types OHLCV should create OHLCV with correct properties","status":"passed","title":"should create OHLCV with correct properties","duration":0.14576300000004494,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","OHLCV"],"fullName":"DSL Core Types OHLCV should have readonly properties","status":"passed","title":"should have readonly properties","duration":0.12612899999999172,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","OHLCV"],"fullName":"DSL Core Types OHLCV should compare equality correctly","status":"passed","title":"should compare equality correctly","duration":0.057992999999953554,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","OHLCV"],"fullName":"DSL Core Types OHLCV should generate meaningful string representation","status":"passed","title":"should generate meaningful string representation","duration":0.19562899999999672,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Level1"],"fullName":"DSL Core Types Level1 should create Level1 with correct properties","status":"passed","title":"should create Level1 with correct properties","duration":0.1148680000000013,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Level1"],"fullName":"DSL Core Types Level1 should have readonly properties","status":"passed","title":"should have readonly properties","duration":0.10381000000000995,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Level1"],"fullName":"DSL Core Types Level1 should compare equality correctly","status":"passed","title":"should compare equality correctly","duration":0.05156499999998232,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Level1"],"fullName":"DSL Core Types Level1 should generate meaningful string representation","status":"passed","title":"should generate meaningful string representation","duration":0.06271999999995614,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Exchange"],"fullName":"DSL Core Types Exchange should create Exchange with correct properties","status":"passed","title":"should create Exchange with correct properties","duration":0.0707479999999805,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Exchange"],"fullName":"DSL Core Types Exchange should have readonly properties","status":"passed","title":"should have readonly properties","duration":0.0807280000000219,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Exchange"],"fullName":"DSL Core Types Exchange should compare equality correctly","status":"passed","title":"should compare equality correctly","duration":0.043783000000019,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Exchange"],"fullName":"DSL Core Types Exchange should handle different exchange types","status":"passed","title":"should handle different exchange types","duration":0.043194000000028154,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","Exchange"],"fullName":"DSL Core Types Exchange should generate meaningful string representation","status":"passed","title":"should generate meaningful string representation","duration":0.060895999999956985,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketSymbol"],"fullName":"DSL Core Types MarketSymbol should create MarketSymbol with basic properties","status":"passed","title":"should create MarketSymbol with basic properties","duration":0.09913399999999228,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketSymbol"],"fullName":"DSL Core Types MarketSymbol should create MarketSymbol with contract details","status":"passed","title":"should create MarketSymbol with contract details","duration":0.24188600000002225,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketSymbol"],"fullName":"DSL Core Types MarketSymbol should handle all instrument types","status":"passed","title":"should handle all instrument types","duration":0.089162999999985,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketSymbol"],"fullName":"DSL Core Types MarketSymbol should handle all asset classes","status":"passed","title":"should handle all asset classes","duration":0.07621000000000322,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketSymbol"],"fullName":"DSL Core Types MarketSymbol should compare equality correctly","status":"passed","title":"should compare equality correctly","duration":0.05421200000000681,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketSymbol"],"fullName":"DSL Core Types MarketSymbol should compare equality with contract details","status":"passed","title":"should compare equality with contract details","duration":0.06727699999999004,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketSymbol"],"fullName":"DSL Core Types MarketSymbol should generate meaningful string representation","status":"passed","title":"should generate meaningful string representation","duration":0.07891300000000001,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketSymbol"],"fullName":"DSL Core Types MarketSymbol should include contract details in string representation","status":"passed","title":"should include contract details in string representation","duration":0.07799699999998211,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketContext"],"fullName":"DSL Core Types MarketContext should create MarketContext with exchange and symbol","status":"passed","title":"should create MarketContext with exchange and symbol","duration":0.06461799999999585,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketContext"],"fullName":"DSL Core Types MarketContext should have readonly properties","status":"passed","title":"should have readonly properties","duration":0.05601000000001477,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketContext"],"fullName":"DSL Core Types MarketContext should compare equality correctly","status":"passed","title":"should compare equality correctly","duration":0.07335299999999734,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","MarketContext"],"fullName":"DSL Core Types MarketContext should generate meaningful string representation","status":"passed","title":"should generate meaningful string representation","duration":0.08625599999999167,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","InstrumentType Enum"],"fullName":"DSL Core Types InstrumentType Enum should contain all required instrument types","status":"passed","title":"should contain all required instrument types","duration":0.1660609999999565,"failureMessages":[],"meta":{}},{"ancestorTitles":["DSL Core Types","InstrumentType Enum"],"fullName":"DSL Core Types InstrumentType Enum should be used correctly in MarketSymbol","status":"passed","title":"should be used correctly in MarketSymbol","duration":0.08548300000001063,"failureMessages":[],"meta":{}}],"startTime":1752168650708,"endTime":1752168650712.166,"status":"passed","message":"","name":"/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/dsl/types.test.ts"},{"assertionResults":[{"ancestorTitles":["QiCore Result<T> System","Result Creation"],"fullName":"QiCore Result<T> System Result Creation should create success results","status":"passed","title":"should create success results","duration":0.835109999999986,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Result Creation"],"fullName":"QiCore Result<T> System Result Creation should create failure results","status":"passed","title":"should create failure results","duration":0.2818770000000086,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Result Creation"],"fullName":"QiCore Result<T> System Result Creation should create success results with null data","status":"passed","title":"should create success results with null data","duration":0.11816499999997632,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Result Creation"],"fullName":"QiCore Result<T> System Result Creation should create success results with complex objects","status":"passed","title":"should create success results with complex objects","duration":0.13807300000001987,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Type Guards"],"fullName":"QiCore Result<T> System Type Guards should identify success results correctly","status":"passed","title":"should identify success results correctly","duration":0.09382900000002792,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Type Guards"],"fullName":"QiCore Result<T> System Type Guards should identify failure results correctly","status":"passed","title":"should identify failure results correctly","duration":0.07640199999997321,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Type Guards"],"fullName":"QiCore Result<T> System Type Guards should be mutually exclusive","status":"passed","title":"should be mutually exclusive","duration":0.09985800000004019,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Data Extraction"],"fullName":"QiCore Result<T> System Data Extraction should extract data from success results","status":"passed","title":"should extract data from success results","duration":0.05413399999997637,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Data Extraction"],"fullName":"QiCore Result<T> System Data Extraction should return null for data from failure results","status":"passed","title":"should return null for data from failure results","duration":0.09312399999998888,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Data Extraction"],"fullName":"QiCore Result<T> System Data Extraction should extract errors from failure results","status":"passed","title":"should extract errors from failure results","duration":0.059056999999995696,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Data Extraction"],"fullName":"QiCore Result<T> System Data Extraction should return null for errors from success results","status":"passed","title":"should return null for errors from success results","duration":0.05838499999998703,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","QiError Creation"],"fullName":"QiCore Result<T> System QiError Creation should create QiError with all required fields","status":"passed","title":"should create QiError with all required fields","duration":0.12280999999995856,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","QiError Creation"],"fullName":"QiCore Result<T> System QiError Creation should create QiError with different categories","status":"passed","title":"should create QiError with different categories","duration":0.060055999999974574,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","QiError Creation"],"fullName":"QiCore Result<T> System QiError Creation should create QiError with optional context","status":"passed","title":"should create QiError with optional context","duration":0.1049579999999537,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","QiError Creation"],"fullName":"QiCore Result<T> System QiError Creation should create QiError without context","status":"passed","title":"should create QiError without context","duration":0.05970700000000306,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Type Safety"],"fullName":"QiCore Result<T> System Type Safety should maintain type safety for success data","status":"passed","title":"should maintain type safety for success data","duration":0.05192299999998795,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Type Safety"],"fullName":"QiCore Result<T> System Type Safety should handle union types correctly","status":"passed","title":"should handle union types correctly","duration":0.06128099999995129,"failureMessages":[],"meta":{}},{"ancestorTitles":["QiCore Result<T> System","Error Composition"],"fullName":"QiCore Result<T> System Error Composition should compose multiple Results correctly","status":"passed","title":"should compose multiple Results correctly","duration":0.132974000000047,"failureMessages":[],"meta":{}}],"startTime":1752168650669,"endTime":1752168650672.133,"status":"passed","message":"","name":"/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/qicore/result-system.test.ts"},{"assertionResults":[{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","Constructor"],"fullName":"CoinGecko MCP Reader - Real Server Integration Constructor should create CoinGecko MCP Reader with correct configuration","status":"passed","title":"should create CoinGecko MCP Reader with correct configuration","duration":1.2129509999999755,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Interface - readPrice"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Interface - readPrice should read current Bitcoin price successfully","status":"passed","title":"should read current Bitcoin price successfully","duration":268.45106499999974,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Interface - readPrice"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Interface - readPrice should read current Ethereum price successfully","status":"passed","title":"should read current Ethereum price successfully","duration":595.839997,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Interface - readPrice"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Interface - readPrice should reject non-crypto assets with proper error","status":"passed","title":"should reject non-crypto assets with proper error","duration":0.9615279999998165,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Interface - readPrice"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Interface - readPrice should handle historical price requests using OHLCV","status":"passed","title":"should handle historical price requests using OHLCV","duration":226.2619539999996,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Interface - readLevel1"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Interface - readLevel1 should properly reject Level1 requests (unsupported by CoinGecko)","status":"passed","title":"should properly reject Level1 requests (unsupported by CoinGecko)","duration":0.8216769999999087,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Interface - readLevel1"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Interface - readLevel1 should reject historical Level1 requests","status":"passed","title":"should reject historical Level1 requests","duration":0.582629999999881,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Interface - readOHLCV"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Interface - readOHLCV should read Bitcoin OHLCV data successfully","status":"passed","title":"should read Bitcoin OHLCV data successfully","duration":233.13400999999976,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Interface - readOHLCV"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Interface - readOHLCV should read historical OHLCV data with time filtering","status":"passed","title":"should read historical OHLCV data with time filtering","duration":238.41740000000027,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Interface - readOHLCV"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Interface - readOHLCV should reject non-crypto assets for OHLCV","status":"passed","title":"should reject non-crypto assets for OHLCV","duration":0.3943090000002485,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Interface - readOHLCV"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Interface - readOHLCV should handle invalid time intervals","status":"passed","title":"should handle invalid time intervals","duration":0.3336199999994278,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Historical Methods"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Historical Methods should implement readHistoricalPrices","status":"passed","title":"should implement readHistoricalPrices","duration":226.33580999999958,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Historical Methods"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Historical Methods should reject readHistoricalLevel1","status":"passed","title":"should reject readHistoricalLevel1","duration":0.2858299999998053,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","DSL Historical Methods"],"fullName":"CoinGecko MCP Reader - Real Server Integration DSL Historical Methods should implement readHistoricalOHLCV","status":"passed","title":"should implement readHistoricalOHLCV","duration":534.497738,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","Time Interval Validation"],"fullName":"CoinGecko MCP Reader - Real Server Integration Time Interval Validation should validate future intervals","status":"passed","title":"should validate future intervals","duration":0.6285909999996875,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","Time Interval Validation"],"fullName":"CoinGecko MCP Reader - Real Server Integration Time Interval Validation should handle edge case time intervals","status":"passed","title":"should handle edge case time intervals","duration":0.5230069999997795,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","Error Handling and Resilience"],"fullName":"CoinGecko MCP Reader - Real Server Integration Error Handling and Resilience should handle network issues gracefully","status":"passed","title":"should handle network issues gracefully","duration":493.9128789999995,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","Error Handling and Resilience"],"fullName":"CoinGecko MCP Reader - Real Server Integration Error Handling and Resilience should handle symbol case correctly","status":"passed","title":"should handle symbol case correctly","duration":280.0072260000006,"failureMessages":[],"meta":{}},{"ancestorTitles":["CoinGecko MCP Reader - Real Server Integration","Response Processing"],"fullName":"CoinGecko MCP Reader - Real Server Integration Response Processing should handle empty or invalid responses gracefully","status":"passed","title":"should handle empty or invalid responses gracefully","duration":241.9627359999995,"failureMessages":[],"meta":{}}],"startTime":1752168654446,"endTime":1752168657792.9626,"status":"passed","message":"","name":"/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/sources/coingecko-mcp-reader.test.ts"},{"assertionResults":[{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","Constructor and Factory"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration Constructor and Factory should create TwelveData MCP Reader with correct configuration","status":"passed","title":"should create TwelveData MCP Reader with correct configuration","duration":0.3510700000000213,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","Constructor and Factory"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration Constructor and Factory should create reader using factory function","status":"passed","title":"should create reader using factory function","duration":0.05386699999999678,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","DSL Interface - readPrice"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readPrice should read current Bitcoin price successfully","status":"passed","title":"should read current Bitcoin price successfully","duration":0.06371899999999187,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","DSL Interface - readPrice"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readPrice should reject mismatched asset classes","status":"passed","title":"should reject mismatched asset classes","duration":0.07114100000001145,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","DSL Interface - readPrice"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readPrice should handle historical price requests","status":"passed","title":"should handle historical price requests","duration":0.06497799999999643,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","DSL Interface - readLevel1"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readLevel1 should read Level1 quote data successfully","status":"passed","title":"should read Level1 quote data successfully","duration":0.061748000000022785,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","DSL Interface - readLevel1"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readLevel1 should handle Level1 data with default sizes","status":"passed","title":"should handle Level1 data with default sizes","duration":0.061763000000013335,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","DSL Interface - readOHLCV"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readOHLCV should read current OHLCV data successfully","status":"passed","title":"should read current OHLCV data successfully","duration":0.07975700000000074,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","DSL Interface - readOHLCV"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readOHLCV should read historical OHLCV data with time range","status":"passed","title":"should read historical OHLCV data with time range","duration":0.1249819999999886,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","DSL Interface - readOHLCV"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readOHLCV should handle invalid time intervals","status":"passed","title":"should handle invalid time intervals","duration":0.04956500000000119,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","Symbol Formatting"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration Symbol Formatting should format crypto symbols correctly","status":"passed","title":"should format crypto symbols correctly","duration":0.032133000000015954,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","Historical Data Methods"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration Historical Data Methods should read historical prices successfully","status":"passed","title":"should read historical prices successfully","duration":0.03172100000000455,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","Historical Data Methods"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration Historical Data Methods should handle readHistoricalLevel1 appropriately","status":"passed","title":"should handle readHistoricalLevel1 appropriately","duration":0.028904000000011365,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","Historical Data Methods"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration Historical Data Methods should read historical OHLCV successfully","status":"passed","title":"should read historical OHLCV successfully","duration":0.029089999999996508,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","Error Handling"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration Error Handling should handle invalid symbols","status":"passed","title":"should handle invalid symbols","duration":0.04298199999999497,"failureMessages":[],"meta":{}},{"ancestorTitles":["TwelveData MCP Reader - Real MCP Server Integration","Error Handling"],"fullName":"TwelveData MCP Reader - Real MCP Server Integration Error Handling should handle network errors gracefully","status":"passed","title":"should handle network errors gracefully","duration":0.03213600000000838,"failureMessages":[],"meta":{}}],"startTime":1752168650710,"endTime":1752168650712.0496,"status":"passed","message":"","name":"/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/sources/twelve-data-mcp-reader.test.ts"},{"assertionResults":[{"ancestorTitles":["Time Interval Utilities","createTimeInterval"],"fullName":"Time Interval Utilities createTimeInterval should create time interval with correct properties","status":"passed","title":"should create time interval with correct properties","duration":1.195368999999971,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createTimeInterval"],"fullName":"Time Interval Utilities createTimeInterval should handle same day intervals","status":"passed","title":"should handle same day intervals","duration":0.10314299999998866,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createTimeInterval"],"fullName":"Time Interval Utilities createTimeInterval should handle minute-level precision","status":"passed","title":"should handle minute-level precision","duration":0.07140099999998029,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createLastNDaysInterval"],"fullName":"Time Interval Utilities createLastNDaysInterval should create interval for last N days","status":"passed","title":"should create interval for last N days","duration":0.20923900000002504,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createLastNDaysInterval"],"fullName":"Time Interval Utilities createLastNDaysInterval should handle single day interval","status":"passed","title":"should handle single day interval","duration":0.05779100000000881,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createLastNDaysInterval"],"fullName":"Time Interval Utilities createLastNDaysInterval should handle zero days (same day)","status":"passed","title":"should handle zero days (same day)","duration":0.0605579999999577,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createLastNDaysInterval"],"fullName":"Time Interval Utilities createLastNDaysInterval should handle larger intervals","status":"passed","title":"should handle larger intervals","duration":0.040790000000015425,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createLastNHoursInterval"],"fullName":"Time Interval Utilities createLastNHoursInterval should create interval for last N hours","status":"passed","title":"should create interval for last N hours","duration":0.09086200000001554,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createLastNHoursInterval"],"fullName":"Time Interval Utilities createLastNHoursInterval should handle single hour interval","status":"passed","title":"should handle single hour interval","duration":0.15050899999999956,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createLastNHoursInterval"],"fullName":"Time Interval Utilities createLastNHoursInterval should handle fractional hours correctly","status":"passed","title":"should handle fractional hours correctly","duration":0.06668799999999919,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createLastNMinutesInterval"],"fullName":"Time Interval Utilities createLastNMinutesInterval should create interval for last N minutes","status":"passed","title":"should create interval for last N minutes","duration":0.08224599999999782,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createLastNMinutesInterval"],"fullName":"Time Interval Utilities createLastNMinutesInterval should handle single minute interval","status":"passed","title":"should handle single minute interval","duration":0.03856700000000046,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","createLastNMinutesInterval"],"fullName":"Time Interval Utilities createLastNMinutesInterval should handle larger minute intervals","status":"passed","title":"should handle larger minute intervals","duration":0.0306770000000256,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","validateTimeInterval"],"fullName":"Time Interval Utilities validateTimeInterval should validate correct time intervals","status":"passed","title":"should validate correct time intervals","duration":0.13431600000001254,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","validateTimeInterval"],"fullName":"Time Interval Utilities validateTimeInterval should reject intervals where start date equals end date","status":"passed","title":"should reject intervals where start date equals end date","duration":0.13671399999998357,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","validateTimeInterval"],"fullName":"Time Interval Utilities validateTimeInterval should reject intervals where start date is after end date","status":"passed","title":"should reject intervals where start date is after end date","duration":0.0649569999999926,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","validateTimeInterval"],"fullName":"Time Interval Utilities validateTimeInterval should reject intervals with end date in the future","status":"passed","title":"should reject intervals with end date in the future","duration":0.06031300000000783,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","validateTimeInterval"],"fullName":"Time Interval Utilities validateTimeInterval should allow intervals ending very close to now","status":"passed","title":"should allow intervals ending very close to now","duration":0.03029599999996435,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","validateTimeInterval"],"fullName":"Time Interval Utilities validateTimeInterval should handle past intervals correctly","status":"passed","title":"should handle past intervals correctly","duration":0.029270000000053642,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","isDateInInterval"],"fullName":"Time Interval Utilities isDateInInterval should return true for dates within interval","status":"passed","title":"should return true for dates within interval","duration":0.03615100000001803,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","isDateInInterval"],"fullName":"Time Interval Utilities isDateInInterval should return true for dates at interval boundaries","status":"passed","title":"should return true for dates at interval boundaries","duration":0.03262799999998833,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","isDateInInterval"],"fullName":"Time Interval Utilities isDateInInterval should return false for dates before interval","status":"passed","title":"should return false for dates before interval","duration":0.02432800000002544,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","isDateInInterval"],"fullName":"Time Interval Utilities isDateInInterval should return false for dates after interval","status":"passed","title":"should return false for dates after interval","duration":0.023320999999953074,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","isDateInInterval"],"fullName":"Time Interval Utilities isDateInInterval should handle exact millisecond precision","status":"passed","title":"should handle exact millisecond precision","duration":0.04729500000001963,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","getIntervalDurationMs"],"fullName":"Time Interval Utilities getIntervalDurationMs should calculate duration in milliseconds correctly","status":"passed","title":"should calculate duration in milliseconds correctly","duration":0.04564499999997906,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","getIntervalDurationMs"],"fullName":"Time Interval Utilities getIntervalDurationMs should handle minute durations","status":"passed","title":"should handle minute durations","duration":0.028969000000017786,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","getIntervalDurationMs"],"fullName":"Time Interval Utilities getIntervalDurationMs should handle hour durations","status":"passed","title":"should handle hour durations","duration":0.02539099999995642,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","getIntervalDurationMs"],"fullName":"Time Interval Utilities getIntervalDurationMs should handle day durations","status":"passed","title":"should handle day durations","duration":0.023275999999953,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","getIntervalDurationMs"],"fullName":"Time Interval Utilities getIntervalDurationMs should handle complex durations","status":"passed","title":"should handle complex durations","duration":0.026341999999999643,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","getIntervalDurationDays"],"fullName":"Time Interval Utilities getIntervalDurationDays should calculate exact day durations","status":"passed","title":"should calculate exact day durations","duration":0.034780000000012024,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","getIntervalDurationDays"],"fullName":"Time Interval Utilities getIntervalDurationDays should round up partial days","status":"passed","title":"should round up partial days","duration":0.025345000000015716,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","getIntervalDurationDays"],"fullName":"Time Interval Utilities getIntervalDurationDays should handle multiple day durations","status":"passed","title":"should handle multiple day durations","duration":0.023761999999976524,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","getIntervalDurationDays"],"fullName":"Time Interval Utilities getIntervalDurationDays should handle partial days consistently","status":"passed","title":"should handle partial days consistently","duration":0.025670999999988453,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","getIntervalDurationDays"],"fullName":"Time Interval Utilities getIntervalDurationDays should handle very short intervals","status":"passed","title":"should handle very short intervals","duration":0.025283999999999196,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","getIntervalDurationDays"],"fullName":"Time Interval Utilities getIntervalDurationDays should handle month-long intervals","status":"passed","title":"should handle month-long intervals","duration":0.026515000000017608,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","Integration Tests"],"fullName":"Time Interval Utilities Integration Tests should work with createLastNDaysInterval and validation","status":"passed","title":"should work with createLastNDaysInterval and validation","duration":0.04048599999998714,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","Integration Tests"],"fullName":"Time Interval Utilities Integration Tests should work with createLastNHoursInterval and date checking","status":"passed","title":"should work with createLastNHoursInterval and date checking","duration":0.04774400000002288,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","Integration Tests"],"fullName":"Time Interval Utilities Integration Tests should work with createLastNMinutesInterval and duration calculation","status":"passed","title":"should work with createLastNMinutesInterval and duration calculation","duration":0.03857199999998784,"failureMessages":[],"meta":{}},{"ancestorTitles":["Time Interval Utilities","Integration Tests"],"fullName":"Time Interval Utilities Integration Tests should handle edge cases in real-world scenarios","status":"passed","title":"should handle edge cases in real-world scenarios","duration":0.05831000000000586,"failureMessages":[],"meta":{}}],"startTime":1752168650674,"endTime":1752168650678.0583,"status":"passed","message":"","name":"/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/utils/time-intervals.test.ts"}]}
+{
+  "numTotalTestSuites": 68,
+  "numPassedTestSuites": 68,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 191,
+  "numPassedTests": 191,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1752168650369,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getSpread"],
+          "fullName": "Price Calculation Functions getSpread should calculate spread correctly for valid Level1 data",
+          "status": "passed",
+          "title": "should calculate spread correctly for valid Level1 data",
+          "duration": 0.7679989999999748,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getSpread"],
+          "fullName": "Price Calculation Functions getSpread should return failure for negative bid price",
+          "status": "passed",
+          "title": "should return failure for negative bid price",
+          "duration": 0.24642399999999043,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getSpread"],
+          "fullName": "Price Calculation Functions getSpread should return failure for negative ask price",
+          "status": "passed",
+          "title": "should return failure for negative ask price",
+          "duration": 0.16741500000000542,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getSpread"],
+          "fullName": "Price Calculation Functions getSpread should return failure for zero bid price",
+          "status": "passed",
+          "title": "should return failure for zero bid price",
+          "duration": 0.10223600000000488,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getSpread"],
+          "fullName": "Price Calculation Functions getSpread should return failure for zero ask price",
+          "status": "passed",
+          "title": "should return failure for zero ask price",
+          "duration": 0.08080899999998792,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getSpread"],
+          "fullName": "Price Calculation Functions getSpread should return failure when ask price equals bid price",
+          "status": "passed",
+          "title": "should return failure when ask price equals bid price",
+          "duration": 0.11723899999998366,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getSpread"],
+          "fullName": "Price Calculation Functions getSpread should return failure when ask price is less than bid price",
+          "status": "passed",
+          "title": "should return failure when ask price is less than bid price",
+          "duration": 0.09495700000002216,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getSpread"],
+          "fullName": "Price Calculation Functions getSpread should calculate spread for small price differences",
+          "status": "passed",
+          "title": "should calculate spread for small price differences",
+          "duration": 0.09377900000004047,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getSpread"],
+          "fullName": "Price Calculation Functions getSpread should calculate spread for large price differences",
+          "status": "passed",
+          "title": "should calculate spread for large price differences",
+          "duration": 0.18624399999998786,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getMidPrice"],
+          "fullName": "Price Calculation Functions getMidPrice should calculate mid price correctly for valid Level1 data",
+          "status": "passed",
+          "title": "should calculate mid price correctly for valid Level1 data",
+          "duration": 0.10864500000002408,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getMidPrice"],
+          "fullName": "Price Calculation Functions getMidPrice should return failure for negative bid price",
+          "status": "passed",
+          "title": "should return failure for negative bid price",
+          "duration": 0.10249199999998382,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getMidPrice"],
+          "fullName": "Price Calculation Functions getMidPrice should return failure for negative ask price",
+          "status": "passed",
+          "title": "should return failure for negative ask price",
+          "duration": 0.06334100000003673,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getMidPrice"],
+          "fullName": "Price Calculation Functions getMidPrice should return failure for zero prices",
+          "status": "passed",
+          "title": "should return failure for zero prices",
+          "duration": 0.05031200000001945,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getMidPrice"],
+          "fullName": "Price Calculation Functions getMidPrice should return failure when ask price equals bid price",
+          "status": "passed",
+          "title": "should return failure when ask price equals bid price",
+          "duration": 0.052413000000001375,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getMidPrice"],
+          "fullName": "Price Calculation Functions getMidPrice should return failure when ask price is less than bid price",
+          "status": "passed",
+          "title": "should return failure when ask price is less than bid price",
+          "duration": 0.04689100000001645,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getMidPrice"],
+          "fullName": "Price Calculation Functions getMidPrice should calculate mid price for equal spread",
+          "status": "passed",
+          "title": "should calculate mid price for equal spread",
+          "duration": 0.06418100000001914,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getMidPrice"],
+          "fullName": "Price Calculation Functions getMidPrice should calculate mid price with precision",
+          "status": "passed",
+          "title": "should calculate mid price with precision",
+          "duration": 0.04622499999999263,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "getMidPrice"],
+          "fullName": "Price Calculation Functions getMidPrice should handle large price values",
+          "status": "passed",
+          "title": "should handle large price values",
+          "duration": 0.03700600000001941,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "Function Integration"],
+          "fullName": "Price Calculation Functions Function Integration should work together for real market data",
+          "status": "passed",
+          "title": "should work together for real market data",
+          "duration": 0.06909400000000687,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Price Calculation Functions", "Function Integration"],
+          "fullName": "Price Calculation Functions Function Integration should both fail for the same invalid data",
+          "status": "passed",
+          "title": "should both fail for the same invalid data",
+          "duration": 0.06284099999999171,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1752168650725,
+      "endTime": 1752168650728.069,
+      "status": "passed",
+      "message": "",
+      "name": "/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/domain/price-calculations.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["DSL Interfaces", "CapabilityInfo"],
+          "fullName": "DSL Interfaces CapabilityInfo should define complete capability information structure",
+          "status": "passed",
+          "title": "should define complete capability information structure",
+          "duration": 1.2563860000000204,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Interfaces", "CapabilityInfo"],
+          "fullName": "DSL Interfaces CapabilityInfo should allow optional rate limits",
+          "status": "passed",
+          "title": "should allow optional rate limits",
+          "duration": 0.09768299999996088,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Interfaces", "CapabilityReporter Interface"],
+          "fullName": "DSL Interfaces CapabilityReporter Interface should implement all required methods",
+          "status": "passed",
+          "title": "should implement all required methods",
+          "duration": 0.21682299999997667,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Interfaces", "MarketDataReader Interface"],
+          "fullName": "DSL Interfaces MarketDataReader Interface should define all required read methods",
+          "status": "passed",
+          "title": "should define all required read methods",
+          "duration": 0.1402259999999842,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Interfaces", "MarketDataReader Interface"],
+          "fullName": "DSL Interfaces MarketDataReader Interface should handle success and failure cases",
+          "status": "passed",
+          "title": "should handle success and failure cases",
+          "duration": 0.21345099999996364,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Interfaces", "MarketDataWriter Interface"],
+          "fullName": "DSL Interfaces MarketDataWriter Interface should define all required write methods",
+          "status": "passed",
+          "title": "should define all required write methods",
+          "duration": 0.13184799999999086,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Interfaces", "MarketDataWriter Interface"],
+          "fullName": "DSL Interfaces MarketDataWriter Interface should handle success and failure cases",
+          "status": "passed",
+          "title": "should handle success and failure cases",
+          "duration": 0.16937200000000985,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Interfaces", "StreamingReader Interface"],
+          "fullName": "DSL Interfaces StreamingReader Interface should define all required streaming methods",
+          "status": "passed",
+          "title": "should define all required streaming methods",
+          "duration": 0.08368200000001025,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Interfaces", "StreamingReader Interface"],
+          "fullName": "DSL Interfaces StreamingReader Interface should handle callback functions correctly",
+          "status": "passed",
+          "title": "should handle callback functions correctly",
+          "duration": 10.740251,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Interfaces", "Composite Interfaces"],
+          "fullName": "DSL Interfaces Composite Interfaces should implement MarketDataProvider interface",
+          "status": "passed",
+          "title": "should implement MarketDataProvider interface",
+          "duration": 0.1885599999999954,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Interfaces", "Composite Interfaces"],
+          "fullName": "DSL Interfaces Composite Interfaces should implement MarketDataBridge interface",
+          "status": "passed",
+          "title": "should implement MarketDataBridge interface",
+          "duration": 0.12066800000002331,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1752168650709,
+      "endTime": 1752168650723.1206,
+      "status": "passed",
+      "message": "",
+      "name": "/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/dsl/interfaces.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should read current price for 'CCXT'",
+          "status": "passed",
+          "title": "should read current price for 'CCXT'",
+          "duration": 8.664479999999969,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should read current price for 'TwelveData'",
+          "status": "passed",
+          "title": "should read current price for 'TwelveData'",
+          "duration": 0.4611250000000382,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should read current price for 'Alpha Vantage'",
+          "status": "passed",
+          "title": "should read current price for 'Alpha Vantage'",
+          "duration": 0.3559309999999982,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should handle unsupported price reading gracefully for 'CoinGecko'",
+          "status": "passed",
+          "title": "should handle unsupported price reading gracefully for 'CoinGecko'",
+          "duration": 0.39855099999999766,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should return Result<T> type for 'CoinGecko' (never throw)",
+          "status": "passed",
+          "title": "should return Result<T> type for 'CoinGecko' (never throw)",
+          "duration": 0.153282000000047,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should return Result<T> type for 'CCXT' (never throw)",
+          "status": "passed",
+          "title": "should return Result<T> type for 'CCXT' (never throw)",
+          "duration": 0.07967100000001892,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should return Result<T> type for 'TwelveData' (never throw)",
+          "status": "passed",
+          "title": "should return Result<T> type for 'TwelveData' (never throw)",
+          "duration": 0.05338499999999158,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readPrice should return Result<T> type for 'Alpha Vantage' (never throw)",
+          "status": "passed",
+          "title": "should return Result<T> type for 'Alpha Vantage' (never throw)",
+          "duration": 0.049172999999996136,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readLevel1"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readLevel1 should read Level1 data for 'CCXT'",
+          "status": "passed",
+          "title": "should read Level1 data for 'CCXT'",
+          "duration": 0.4785969999999793,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readLevel1"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readLevel1 should handle unsupported Level1 gracefully for 'CoinGecko'",
+          "status": "passed",
+          "title": "should handle unsupported Level1 gracefully for 'CoinGecko'",
+          "duration": 0.22386399999999185,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readLevel1"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readLevel1 should handle unsupported Level1 gracefully for 'TwelveData'",
+          "status": "passed",
+          "title": "should handle unsupported Level1 gracefully for 'TwelveData'",
+          "duration": 0.2270859999999857,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readLevel1"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readLevel1 should handle unsupported Level1 gracefully for 'Alpha Vantage'",
+          "status": "passed",
+          "title": "should handle unsupported Level1 gracefully for 'Alpha Vantage'",
+          "duration": 0.28921499999995604,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readOHLCV"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readOHLCV should read OHLCV data for 'CCXT'",
+          "status": "passed",
+          "title": "should read OHLCV data for 'CCXT'",
+          "duration": 0.4867970000000241,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readOHLCV"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readOHLCV should read OHLCV data for 'TwelveData'",
+          "status": "passed",
+          "title": "should read OHLCV data for 'TwelveData'",
+          "duration": 0.3709610000000225,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readOHLCV"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readOHLCV should read OHLCV data for 'Alpha Vantage'",
+          "status": "passed",
+          "title": "should read OHLCV data for 'Alpha Vantage'",
+          "duration": 0.28619699999995873,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - readOHLCV"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - readOHLCV should handle unsupported OHLCV reading gracefully for 'CoinGecko'",
+          "status": "passed",
+          "title": "should handle unsupported OHLCV reading gracefully for 'CoinGecko'",
+          "duration": 0.263924999999972,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Historical Data Methods"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical prices for 'CoinGecko'",
+          "status": "passed",
+          "title": "should read historical prices for 'CoinGecko'",
+          "duration": 0.23226799999997638,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Historical Data Methods"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical prices for 'CCXT'",
+          "status": "passed",
+          "title": "should read historical prices for 'CCXT'",
+          "duration": 0.17083100000002105,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Historical Data Methods"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical prices for 'TwelveData'",
+          "status": "passed",
+          "title": "should read historical prices for 'TwelveData'",
+          "duration": 0.37634199999996554,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Historical Data Methods"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical prices for 'Alpha Vantage'",
+          "status": "passed",
+          "title": "should read historical prices for 'Alpha Vantage'",
+          "duration": 0.15196500000001834,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Historical Data Methods"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical OHLCV for 'CoinGecko'",
+          "status": "passed",
+          "title": "should read historical OHLCV for 'CoinGecko'",
+          "duration": 0.13698499999998148,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Historical Data Methods"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical OHLCV for 'CCXT'",
+          "status": "passed",
+          "title": "should read historical OHLCV for 'CCXT'",
+          "duration": 0.10265300000003208,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Historical Data Methods"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical OHLCV for 'TwelveData'",
+          "status": "passed",
+          "title": "should read historical OHLCV for 'TwelveData'",
+          "duration": 0.17577799999997978,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Historical Data Methods"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Historical Data Methods should read historical OHLCV for 'Alpha Vantage'",
+          "status": "passed",
+          "title": "should read historical OHLCV for 'Alpha Vantage'",
+          "duration": 0.11656199999998762,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Error Handling Consistency"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should handle invalid symbols consistently for 'CoinGecko'",
+          "status": "passed",
+          "title": "should handle invalid symbols consistently for 'CoinGecko'",
+          "duration": 0.2615780000000427,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Error Handling Consistency"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should handle invalid symbols consistently for 'CCXT'",
+          "status": "passed",
+          "title": "should handle invalid symbols consistently for 'CCXT'",
+          "duration": 0.10893600000002834,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Error Handling Consistency"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should handle invalid symbols consistently for 'TwelveData'",
+          "status": "passed",
+          "title": "should handle invalid symbols consistently for 'TwelveData'",
+          "duration": 0.07689499999997906,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Error Handling Consistency"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should handle invalid symbols consistently for 'Alpha Vantage'",
+          "status": "passed",
+          "title": "should handle invalid symbols consistently for 'Alpha Vantage'",
+          "duration": 0.08687299999996867,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Error Handling Consistency"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should validate asset class compatibility for 'CoinGecko'",
+          "status": "passed",
+          "title": "should validate asset class compatibility for 'CoinGecko'",
+          "duration": 0.19046800000000985,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Error Handling Consistency"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should validate asset class compatibility for 'CCXT'",
+          "status": "passed",
+          "title": "should validate asset class compatibility for 'CCXT'",
+          "duration": 0.13903300000004037,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Error Handling Consistency"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should validate asset class compatibility for 'TwelveData'",
+          "status": "passed",
+          "title": "should validate asset class compatibility for 'TwelveData'",
+          "duration": 0.11779100000001108,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Error Handling Consistency"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Error Handling Consistency should validate asset class compatibility for 'Alpha Vantage'",
+          "status": "passed",
+          "title": "should validate asset class compatibility for 'Alpha Vantage'",
+          "duration": 0.07344799999998486,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Type Safety"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Type Safety should return properly typed data structures for 'CoinGecko'",
+          "status": "passed",
+          "title": "should return properly typed data structures for 'CoinGecko'",
+          "duration": 0.13934000000000424,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Type Safety"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Type Safety should return properly typed data structures for 'CCXT'",
+          "status": "passed",
+          "title": "should return properly typed data structures for 'CCXT'",
+          "duration": 1.3367939999999976,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Type Safety"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Type Safety should return properly typed data structures for 'TwelveData'",
+          "status": "passed",
+          "title": "should return properly typed data structures for 'TwelveData'",
+          "duration": 0.5430719999999951,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "MarketDataReader Interface - Unified DSL Testing",
+            "DSL Interface - Type Safety"
+          ],
+          "fullName": "MarketDataReader Interface - Unified DSL Testing DSL Interface - Type Safety should return properly typed data structures for 'Alpha Vantage'",
+          "status": "passed",
+          "title": "should return properly typed data structures for 'Alpha Vantage'",
+          "duration": 0.43993000000000393,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1752168650711,
+      "endTime": 1752168650729.44,
+      "status": "passed",
+      "message": "",
+      "name": "/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/dsl/market-data-reader-interface.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["DSL Core Types", "Price"],
+          "fullName": "DSL Core Types Price should create Price with correct properties",
+          "status": "passed",
+          "title": "should create Price with correct properties",
+          "duration": 0.6809049999999957,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Price"],
+          "fullName": "DSL Core Types Price should have readonly properties",
+          "status": "passed",
+          "title": "should have readonly properties",
+          "duration": 0.12774299999995264,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Price"],
+          "fullName": "DSL Core Types Price should compare equality correctly",
+          "status": "passed",
+          "title": "should compare equality correctly",
+          "duration": 0.10518000000001848,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Price"],
+          "fullName": "DSL Core Types Price should handle different timestamps in equality",
+          "status": "passed",
+          "title": "should handle different timestamps in equality",
+          "duration": 0.05729199999996126,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Price"],
+          "fullName": "DSL Core Types Price should generate meaningful string representation",
+          "status": "passed",
+          "title": "should generate meaningful string representation",
+          "duration": 0.31446799999997666,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "OHLCV"],
+          "fullName": "DSL Core Types OHLCV should create OHLCV with correct properties",
+          "status": "passed",
+          "title": "should create OHLCV with correct properties",
+          "duration": 0.14576300000004494,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "OHLCV"],
+          "fullName": "DSL Core Types OHLCV should have readonly properties",
+          "status": "passed",
+          "title": "should have readonly properties",
+          "duration": 0.12612899999999172,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "OHLCV"],
+          "fullName": "DSL Core Types OHLCV should compare equality correctly",
+          "status": "passed",
+          "title": "should compare equality correctly",
+          "duration": 0.057992999999953554,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "OHLCV"],
+          "fullName": "DSL Core Types OHLCV should generate meaningful string representation",
+          "status": "passed",
+          "title": "should generate meaningful string representation",
+          "duration": 0.19562899999999672,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Level1"],
+          "fullName": "DSL Core Types Level1 should create Level1 with correct properties",
+          "status": "passed",
+          "title": "should create Level1 with correct properties",
+          "duration": 0.1148680000000013,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Level1"],
+          "fullName": "DSL Core Types Level1 should have readonly properties",
+          "status": "passed",
+          "title": "should have readonly properties",
+          "duration": 0.10381000000000995,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Level1"],
+          "fullName": "DSL Core Types Level1 should compare equality correctly",
+          "status": "passed",
+          "title": "should compare equality correctly",
+          "duration": 0.05156499999998232,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Level1"],
+          "fullName": "DSL Core Types Level1 should generate meaningful string representation",
+          "status": "passed",
+          "title": "should generate meaningful string representation",
+          "duration": 0.06271999999995614,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Exchange"],
+          "fullName": "DSL Core Types Exchange should create Exchange with correct properties",
+          "status": "passed",
+          "title": "should create Exchange with correct properties",
+          "duration": 0.0707479999999805,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Exchange"],
+          "fullName": "DSL Core Types Exchange should have readonly properties",
+          "status": "passed",
+          "title": "should have readonly properties",
+          "duration": 0.0807280000000219,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Exchange"],
+          "fullName": "DSL Core Types Exchange should compare equality correctly",
+          "status": "passed",
+          "title": "should compare equality correctly",
+          "duration": 0.043783000000019,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Exchange"],
+          "fullName": "DSL Core Types Exchange should handle different exchange types",
+          "status": "passed",
+          "title": "should handle different exchange types",
+          "duration": 0.043194000000028154,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "Exchange"],
+          "fullName": "DSL Core Types Exchange should generate meaningful string representation",
+          "status": "passed",
+          "title": "should generate meaningful string representation",
+          "duration": 0.060895999999956985,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketSymbol"],
+          "fullName": "DSL Core Types MarketSymbol should create MarketSymbol with basic properties",
+          "status": "passed",
+          "title": "should create MarketSymbol with basic properties",
+          "duration": 0.09913399999999228,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketSymbol"],
+          "fullName": "DSL Core Types MarketSymbol should create MarketSymbol with contract details",
+          "status": "passed",
+          "title": "should create MarketSymbol with contract details",
+          "duration": 0.24188600000002225,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketSymbol"],
+          "fullName": "DSL Core Types MarketSymbol should handle all instrument types",
+          "status": "passed",
+          "title": "should handle all instrument types",
+          "duration": 0.089162999999985,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketSymbol"],
+          "fullName": "DSL Core Types MarketSymbol should handle all asset classes",
+          "status": "passed",
+          "title": "should handle all asset classes",
+          "duration": 0.07621000000000322,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketSymbol"],
+          "fullName": "DSL Core Types MarketSymbol should compare equality correctly",
+          "status": "passed",
+          "title": "should compare equality correctly",
+          "duration": 0.05421200000000681,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketSymbol"],
+          "fullName": "DSL Core Types MarketSymbol should compare equality with contract details",
+          "status": "passed",
+          "title": "should compare equality with contract details",
+          "duration": 0.06727699999999004,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketSymbol"],
+          "fullName": "DSL Core Types MarketSymbol should generate meaningful string representation",
+          "status": "passed",
+          "title": "should generate meaningful string representation",
+          "duration": 0.07891300000000001,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketSymbol"],
+          "fullName": "DSL Core Types MarketSymbol should include contract details in string representation",
+          "status": "passed",
+          "title": "should include contract details in string representation",
+          "duration": 0.07799699999998211,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketContext"],
+          "fullName": "DSL Core Types MarketContext should create MarketContext with exchange and symbol",
+          "status": "passed",
+          "title": "should create MarketContext with exchange and symbol",
+          "duration": 0.06461799999999585,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketContext"],
+          "fullName": "DSL Core Types MarketContext should have readonly properties",
+          "status": "passed",
+          "title": "should have readonly properties",
+          "duration": 0.05601000000001477,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketContext"],
+          "fullName": "DSL Core Types MarketContext should compare equality correctly",
+          "status": "passed",
+          "title": "should compare equality correctly",
+          "duration": 0.07335299999999734,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "MarketContext"],
+          "fullName": "DSL Core Types MarketContext should generate meaningful string representation",
+          "status": "passed",
+          "title": "should generate meaningful string representation",
+          "duration": 0.08625599999999167,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "InstrumentType Enum"],
+          "fullName": "DSL Core Types InstrumentType Enum should contain all required instrument types",
+          "status": "passed",
+          "title": "should contain all required instrument types",
+          "duration": 0.1660609999999565,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DSL Core Types", "InstrumentType Enum"],
+          "fullName": "DSL Core Types InstrumentType Enum should be used correctly in MarketSymbol",
+          "status": "passed",
+          "title": "should be used correctly in MarketSymbol",
+          "duration": 0.08548300000001063,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1752168650708,
+      "endTime": 1752168650712.166,
+      "status": "passed",
+      "message": "",
+      "name": "/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/dsl/types.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Result Creation"],
+          "fullName": "QiCore Result<T> System Result Creation should create success results",
+          "status": "passed",
+          "title": "should create success results",
+          "duration": 0.835109999999986,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Result Creation"],
+          "fullName": "QiCore Result<T> System Result Creation should create failure results",
+          "status": "passed",
+          "title": "should create failure results",
+          "duration": 0.2818770000000086,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Result Creation"],
+          "fullName": "QiCore Result<T> System Result Creation should create success results with null data",
+          "status": "passed",
+          "title": "should create success results with null data",
+          "duration": 0.11816499999997632,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Result Creation"],
+          "fullName": "QiCore Result<T> System Result Creation should create success results with complex objects",
+          "status": "passed",
+          "title": "should create success results with complex objects",
+          "duration": 0.13807300000001987,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Type Guards"],
+          "fullName": "QiCore Result<T> System Type Guards should identify success results correctly",
+          "status": "passed",
+          "title": "should identify success results correctly",
+          "duration": 0.09382900000002792,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Type Guards"],
+          "fullName": "QiCore Result<T> System Type Guards should identify failure results correctly",
+          "status": "passed",
+          "title": "should identify failure results correctly",
+          "duration": 0.07640199999997321,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Type Guards"],
+          "fullName": "QiCore Result<T> System Type Guards should be mutually exclusive",
+          "status": "passed",
+          "title": "should be mutually exclusive",
+          "duration": 0.09985800000004019,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Data Extraction"],
+          "fullName": "QiCore Result<T> System Data Extraction should extract data from success results",
+          "status": "passed",
+          "title": "should extract data from success results",
+          "duration": 0.05413399999997637,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Data Extraction"],
+          "fullName": "QiCore Result<T> System Data Extraction should return null for data from failure results",
+          "status": "passed",
+          "title": "should return null for data from failure results",
+          "duration": 0.09312399999998888,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Data Extraction"],
+          "fullName": "QiCore Result<T> System Data Extraction should extract errors from failure results",
+          "status": "passed",
+          "title": "should extract errors from failure results",
+          "duration": 0.059056999999995696,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Data Extraction"],
+          "fullName": "QiCore Result<T> System Data Extraction should return null for errors from success results",
+          "status": "passed",
+          "title": "should return null for errors from success results",
+          "duration": 0.05838499999998703,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "QiError Creation"],
+          "fullName": "QiCore Result<T> System QiError Creation should create QiError with all required fields",
+          "status": "passed",
+          "title": "should create QiError with all required fields",
+          "duration": 0.12280999999995856,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "QiError Creation"],
+          "fullName": "QiCore Result<T> System QiError Creation should create QiError with different categories",
+          "status": "passed",
+          "title": "should create QiError with different categories",
+          "duration": 0.060055999999974574,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "QiError Creation"],
+          "fullName": "QiCore Result<T> System QiError Creation should create QiError with optional context",
+          "status": "passed",
+          "title": "should create QiError with optional context",
+          "duration": 0.1049579999999537,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "QiError Creation"],
+          "fullName": "QiCore Result<T> System QiError Creation should create QiError without context",
+          "status": "passed",
+          "title": "should create QiError without context",
+          "duration": 0.05970700000000306,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Type Safety"],
+          "fullName": "QiCore Result<T> System Type Safety should maintain type safety for success data",
+          "status": "passed",
+          "title": "should maintain type safety for success data",
+          "duration": 0.05192299999998795,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Type Safety"],
+          "fullName": "QiCore Result<T> System Type Safety should handle union types correctly",
+          "status": "passed",
+          "title": "should handle union types correctly",
+          "duration": 0.06128099999995129,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["QiCore Result<T> System", "Error Composition"],
+          "fullName": "QiCore Result<T> System Error Composition should compose multiple Results correctly",
+          "status": "passed",
+          "title": "should compose multiple Results correctly",
+          "duration": 0.132974000000047,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1752168650669,
+      "endTime": 1752168650672.133,
+      "status": "passed",
+      "message": "",
+      "name": "/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/qicore/result-system.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["CoinGecko MCP Reader - Real Server Integration", "Constructor"],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration Constructor should create CoinGecko MCP Reader with correct configuration",
+          "status": "passed",
+          "title": "should create CoinGecko MCP Reader with correct configuration",
+          "duration": 1.2129509999999755,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Interface - readPrice should read current Bitcoin price successfully",
+          "status": "passed",
+          "title": "should read current Bitcoin price successfully",
+          "duration": 268.45106499999974,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Interface - readPrice should read current Ethereum price successfully",
+          "status": "passed",
+          "title": "should read current Ethereum price successfully",
+          "duration": 595.839997,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Interface - readPrice should reject non-crypto assets with proper error",
+          "status": "passed",
+          "title": "should reject non-crypto assets with proper error",
+          "duration": 0.9615279999998165,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Interface - readPrice should handle historical price requests using OHLCV",
+          "status": "passed",
+          "title": "should handle historical price requests using OHLCV",
+          "duration": 226.2619539999996,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Interface - readLevel1"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Interface - readLevel1 should properly reject Level1 requests (unsupported by CoinGecko)",
+          "status": "passed",
+          "title": "should properly reject Level1 requests (unsupported by CoinGecko)",
+          "duration": 0.8216769999999087,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Interface - readLevel1"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Interface - readLevel1 should reject historical Level1 requests",
+          "status": "passed",
+          "title": "should reject historical Level1 requests",
+          "duration": 0.582629999999881,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Interface - readOHLCV"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Interface - readOHLCV should read Bitcoin OHLCV data successfully",
+          "status": "passed",
+          "title": "should read Bitcoin OHLCV data successfully",
+          "duration": 233.13400999999976,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Interface - readOHLCV"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Interface - readOHLCV should read historical OHLCV data with time filtering",
+          "status": "passed",
+          "title": "should read historical OHLCV data with time filtering",
+          "duration": 238.41740000000027,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Interface - readOHLCV"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Interface - readOHLCV should reject non-crypto assets for OHLCV",
+          "status": "passed",
+          "title": "should reject non-crypto assets for OHLCV",
+          "duration": 0.3943090000002485,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Interface - readOHLCV"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Interface - readOHLCV should handle invalid time intervals",
+          "status": "passed",
+          "title": "should handle invalid time intervals",
+          "duration": 0.3336199999994278,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Historical Methods"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Historical Methods should implement readHistoricalPrices",
+          "status": "passed",
+          "title": "should implement readHistoricalPrices",
+          "duration": 226.33580999999958,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Historical Methods"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Historical Methods should reject readHistoricalLevel1",
+          "status": "passed",
+          "title": "should reject readHistoricalLevel1",
+          "duration": 0.2858299999998053,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "DSL Historical Methods"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration DSL Historical Methods should implement readHistoricalOHLCV",
+          "status": "passed",
+          "title": "should implement readHistoricalOHLCV",
+          "duration": 534.497738,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "Time Interval Validation"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration Time Interval Validation should validate future intervals",
+          "status": "passed",
+          "title": "should validate future intervals",
+          "duration": 0.6285909999996875,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "Time Interval Validation"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration Time Interval Validation should handle edge case time intervals",
+          "status": "passed",
+          "title": "should handle edge case time intervals",
+          "duration": 0.5230069999997795,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "Error Handling and Resilience"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration Error Handling and Resilience should handle network issues gracefully",
+          "status": "passed",
+          "title": "should handle network issues gracefully",
+          "duration": 493.9128789999995,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "Error Handling and Resilience"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration Error Handling and Resilience should handle symbol case correctly",
+          "status": "passed",
+          "title": "should handle symbol case correctly",
+          "duration": 280.0072260000006,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "CoinGecko MCP Reader - Real Server Integration",
+            "Response Processing"
+          ],
+          "fullName": "CoinGecko MCP Reader - Real Server Integration Response Processing should handle empty or invalid responses gracefully",
+          "status": "passed",
+          "title": "should handle empty or invalid responses gracefully",
+          "duration": 241.9627359999995,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1752168654446,
+      "endTime": 1752168657792.9626,
+      "status": "passed",
+      "message": "",
+      "name": "/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/sources/coingecko-mcp-reader.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "Constructor and Factory"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration Constructor and Factory should create TwelveData MCP Reader with correct configuration",
+          "status": "passed",
+          "title": "should create TwelveData MCP Reader with correct configuration",
+          "duration": 0.3510700000000213,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "Constructor and Factory"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration Constructor and Factory should create reader using factory function",
+          "status": "passed",
+          "title": "should create reader using factory function",
+          "duration": 0.05386699999999678,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readPrice should read current Bitcoin price successfully",
+          "status": "passed",
+          "title": "should read current Bitcoin price successfully",
+          "duration": 0.06371899999999187,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readPrice should reject mismatched asset classes",
+          "status": "passed",
+          "title": "should reject mismatched asset classes",
+          "duration": 0.07114100000001145,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "DSL Interface - readPrice"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readPrice should handle historical price requests",
+          "status": "passed",
+          "title": "should handle historical price requests",
+          "duration": 0.06497799999999643,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "DSL Interface - readLevel1"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readLevel1 should read Level1 quote data successfully",
+          "status": "passed",
+          "title": "should read Level1 quote data successfully",
+          "duration": 0.061748000000022785,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "DSL Interface - readLevel1"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readLevel1 should handle Level1 data with default sizes",
+          "status": "passed",
+          "title": "should handle Level1 data with default sizes",
+          "duration": 0.061763000000013335,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "DSL Interface - readOHLCV"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readOHLCV should read current OHLCV data successfully",
+          "status": "passed",
+          "title": "should read current OHLCV data successfully",
+          "duration": 0.07975700000000074,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "DSL Interface - readOHLCV"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readOHLCV should read historical OHLCV data with time range",
+          "status": "passed",
+          "title": "should read historical OHLCV data with time range",
+          "duration": 0.1249819999999886,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "DSL Interface - readOHLCV"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration DSL Interface - readOHLCV should handle invalid time intervals",
+          "status": "passed",
+          "title": "should handle invalid time intervals",
+          "duration": 0.04956500000000119,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "Symbol Formatting"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration Symbol Formatting should format crypto symbols correctly",
+          "status": "passed",
+          "title": "should format crypto symbols correctly",
+          "duration": 0.032133000000015954,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "Historical Data Methods"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration Historical Data Methods should read historical prices successfully",
+          "status": "passed",
+          "title": "should read historical prices successfully",
+          "duration": 0.03172100000000455,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "Historical Data Methods"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration Historical Data Methods should handle readHistoricalLevel1 appropriately",
+          "status": "passed",
+          "title": "should handle readHistoricalLevel1 appropriately",
+          "duration": 0.028904000000011365,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "Historical Data Methods"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration Historical Data Methods should read historical OHLCV successfully",
+          "status": "passed",
+          "title": "should read historical OHLCV successfully",
+          "duration": 0.029089999999996508,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "Error Handling"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration Error Handling should handle invalid symbols",
+          "status": "passed",
+          "title": "should handle invalid symbols",
+          "duration": 0.04298199999999497,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "TwelveData MCP Reader - Real MCP Server Integration",
+            "Error Handling"
+          ],
+          "fullName": "TwelveData MCP Reader - Real MCP Server Integration Error Handling should handle network errors gracefully",
+          "status": "passed",
+          "title": "should handle network errors gracefully",
+          "duration": 0.03213600000000838,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1752168650710,
+      "endTime": 1752168650712.0496,
+      "status": "passed",
+      "message": "",
+      "name": "/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/sources/twelve-data-mcp-reader.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createTimeInterval"],
+          "fullName": "Time Interval Utilities createTimeInterval should create time interval with correct properties",
+          "status": "passed",
+          "title": "should create time interval with correct properties",
+          "duration": 1.195368999999971,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createTimeInterval"],
+          "fullName": "Time Interval Utilities createTimeInterval should handle same day intervals",
+          "status": "passed",
+          "title": "should handle same day intervals",
+          "duration": 0.10314299999998866,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createTimeInterval"],
+          "fullName": "Time Interval Utilities createTimeInterval should handle minute-level precision",
+          "status": "passed",
+          "title": "should handle minute-level precision",
+          "duration": 0.07140099999998029,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createLastNDaysInterval"],
+          "fullName": "Time Interval Utilities createLastNDaysInterval should create interval for last N days",
+          "status": "passed",
+          "title": "should create interval for last N days",
+          "duration": 0.20923900000002504,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createLastNDaysInterval"],
+          "fullName": "Time Interval Utilities createLastNDaysInterval should handle single day interval",
+          "status": "passed",
+          "title": "should handle single day interval",
+          "duration": 0.05779100000000881,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createLastNDaysInterval"],
+          "fullName": "Time Interval Utilities createLastNDaysInterval should handle zero days (same day)",
+          "status": "passed",
+          "title": "should handle zero days (same day)",
+          "duration": 0.0605579999999577,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createLastNDaysInterval"],
+          "fullName": "Time Interval Utilities createLastNDaysInterval should handle larger intervals",
+          "status": "passed",
+          "title": "should handle larger intervals",
+          "duration": 0.040790000000015425,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createLastNHoursInterval"],
+          "fullName": "Time Interval Utilities createLastNHoursInterval should create interval for last N hours",
+          "status": "passed",
+          "title": "should create interval for last N hours",
+          "duration": 0.09086200000001554,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createLastNHoursInterval"],
+          "fullName": "Time Interval Utilities createLastNHoursInterval should handle single hour interval",
+          "status": "passed",
+          "title": "should handle single hour interval",
+          "duration": 0.15050899999999956,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createLastNHoursInterval"],
+          "fullName": "Time Interval Utilities createLastNHoursInterval should handle fractional hours correctly",
+          "status": "passed",
+          "title": "should handle fractional hours correctly",
+          "duration": 0.06668799999999919,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createLastNMinutesInterval"],
+          "fullName": "Time Interval Utilities createLastNMinutesInterval should create interval for last N minutes",
+          "status": "passed",
+          "title": "should create interval for last N minutes",
+          "duration": 0.08224599999999782,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createLastNMinutesInterval"],
+          "fullName": "Time Interval Utilities createLastNMinutesInterval should handle single minute interval",
+          "status": "passed",
+          "title": "should handle single minute interval",
+          "duration": 0.03856700000000046,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "createLastNMinutesInterval"],
+          "fullName": "Time Interval Utilities createLastNMinutesInterval should handle larger minute intervals",
+          "status": "passed",
+          "title": "should handle larger minute intervals",
+          "duration": 0.0306770000000256,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "validateTimeInterval"],
+          "fullName": "Time Interval Utilities validateTimeInterval should validate correct time intervals",
+          "status": "passed",
+          "title": "should validate correct time intervals",
+          "duration": 0.13431600000001254,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "validateTimeInterval"],
+          "fullName": "Time Interval Utilities validateTimeInterval should reject intervals where start date equals end date",
+          "status": "passed",
+          "title": "should reject intervals where start date equals end date",
+          "duration": 0.13671399999998357,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "validateTimeInterval"],
+          "fullName": "Time Interval Utilities validateTimeInterval should reject intervals where start date is after end date",
+          "status": "passed",
+          "title": "should reject intervals where start date is after end date",
+          "duration": 0.0649569999999926,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "validateTimeInterval"],
+          "fullName": "Time Interval Utilities validateTimeInterval should reject intervals with end date in the future",
+          "status": "passed",
+          "title": "should reject intervals with end date in the future",
+          "duration": 0.06031300000000783,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "validateTimeInterval"],
+          "fullName": "Time Interval Utilities validateTimeInterval should allow intervals ending very close to now",
+          "status": "passed",
+          "title": "should allow intervals ending very close to now",
+          "duration": 0.03029599999996435,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "validateTimeInterval"],
+          "fullName": "Time Interval Utilities validateTimeInterval should handle past intervals correctly",
+          "status": "passed",
+          "title": "should handle past intervals correctly",
+          "duration": 0.029270000000053642,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "isDateInInterval"],
+          "fullName": "Time Interval Utilities isDateInInterval should return true for dates within interval",
+          "status": "passed",
+          "title": "should return true for dates within interval",
+          "duration": 0.03615100000001803,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "isDateInInterval"],
+          "fullName": "Time Interval Utilities isDateInInterval should return true for dates at interval boundaries",
+          "status": "passed",
+          "title": "should return true for dates at interval boundaries",
+          "duration": 0.03262799999998833,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "isDateInInterval"],
+          "fullName": "Time Interval Utilities isDateInInterval should return false for dates before interval",
+          "status": "passed",
+          "title": "should return false for dates before interval",
+          "duration": 0.02432800000002544,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "isDateInInterval"],
+          "fullName": "Time Interval Utilities isDateInInterval should return false for dates after interval",
+          "status": "passed",
+          "title": "should return false for dates after interval",
+          "duration": 0.023320999999953074,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "isDateInInterval"],
+          "fullName": "Time Interval Utilities isDateInInterval should handle exact millisecond precision",
+          "status": "passed",
+          "title": "should handle exact millisecond precision",
+          "duration": 0.04729500000001963,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "getIntervalDurationMs"],
+          "fullName": "Time Interval Utilities getIntervalDurationMs should calculate duration in milliseconds correctly",
+          "status": "passed",
+          "title": "should calculate duration in milliseconds correctly",
+          "duration": 0.04564499999997906,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "getIntervalDurationMs"],
+          "fullName": "Time Interval Utilities getIntervalDurationMs should handle minute durations",
+          "status": "passed",
+          "title": "should handle minute durations",
+          "duration": 0.028969000000017786,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "getIntervalDurationMs"],
+          "fullName": "Time Interval Utilities getIntervalDurationMs should handle hour durations",
+          "status": "passed",
+          "title": "should handle hour durations",
+          "duration": 0.02539099999995642,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "getIntervalDurationMs"],
+          "fullName": "Time Interval Utilities getIntervalDurationMs should handle day durations",
+          "status": "passed",
+          "title": "should handle day durations",
+          "duration": 0.023275999999953,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "getIntervalDurationMs"],
+          "fullName": "Time Interval Utilities getIntervalDurationMs should handle complex durations",
+          "status": "passed",
+          "title": "should handle complex durations",
+          "duration": 0.026341999999999643,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "getIntervalDurationDays"],
+          "fullName": "Time Interval Utilities getIntervalDurationDays should calculate exact day durations",
+          "status": "passed",
+          "title": "should calculate exact day durations",
+          "duration": 0.034780000000012024,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "getIntervalDurationDays"],
+          "fullName": "Time Interval Utilities getIntervalDurationDays should round up partial days",
+          "status": "passed",
+          "title": "should round up partial days",
+          "duration": 0.025345000000015716,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "getIntervalDurationDays"],
+          "fullName": "Time Interval Utilities getIntervalDurationDays should handle multiple day durations",
+          "status": "passed",
+          "title": "should handle multiple day durations",
+          "duration": 0.023761999999976524,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "getIntervalDurationDays"],
+          "fullName": "Time Interval Utilities getIntervalDurationDays should handle partial days consistently",
+          "status": "passed",
+          "title": "should handle partial days consistently",
+          "duration": 0.025670999999988453,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "getIntervalDurationDays"],
+          "fullName": "Time Interval Utilities getIntervalDurationDays should handle very short intervals",
+          "status": "passed",
+          "title": "should handle very short intervals",
+          "duration": 0.025283999999999196,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "getIntervalDurationDays"],
+          "fullName": "Time Interval Utilities getIntervalDurationDays should handle month-long intervals",
+          "status": "passed",
+          "title": "should handle month-long intervals",
+          "duration": 0.026515000000017608,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "Integration Tests"],
+          "fullName": "Time Interval Utilities Integration Tests should work with createLastNDaysInterval and validation",
+          "status": "passed",
+          "title": "should work with createLastNDaysInterval and validation",
+          "duration": 0.04048599999998714,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "Integration Tests"],
+          "fullName": "Time Interval Utilities Integration Tests should work with createLastNHoursInterval and date checking",
+          "status": "passed",
+          "title": "should work with createLastNHoursInterval and date checking",
+          "duration": 0.04774400000002288,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "Integration Tests"],
+          "fullName": "Time Interval Utilities Integration Tests should work with createLastNMinutesInterval and duration calculation",
+          "status": "passed",
+          "title": "should work with createLastNMinutesInterval and duration calculation",
+          "duration": 0.03857199999998784,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Time Interval Utilities", "Integration Tests"],
+          "fullName": "Time Interval Utilities Integration Tests should handle edge cases in real-world scenarios",
+          "status": "passed",
+          "title": "should handle edge cases in real-world scenarios",
+          "duration": 0.05831000000000586,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1752168650674,
+      "endTime": 1752168650678.0583,
+      "status": "passed",
+      "message": "",
+      "name": "/home/zzhang/dev/qi/github/qi-v2-dp-ts-actor/lib/tests/utils/time-intervals.test.ts"
+    }
+  ]
+}

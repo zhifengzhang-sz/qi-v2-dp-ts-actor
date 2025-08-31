@@ -24,7 +24,6 @@ export * from "./dsl";
 // =============================================================================
 
 // Source Actors (Readers)
-export * from "./market/crypto/actors/sources/CoinGeckoMCPReader";
 export * from "./market/crypto/actors/sources/CCXTMCPReader";
 export * from "./market/multi-asset/actors/sources/TwelveDataMCPReader";
 export * from "./market/stock/actors/sources/AlphaVantageMCPReader";
@@ -34,8 +33,7 @@ export * from "./market/crypto/actors/sources";
 // CORE INFRASTRUCTURE
 // =============================================================================
 
-// QiCore Base System
-export * from "./qicore";
+// Now using external @qi/base and @qi/core packages
 
 // =============================================================================
 // FUNCTIONAL PROGRAMMING UTILITIES

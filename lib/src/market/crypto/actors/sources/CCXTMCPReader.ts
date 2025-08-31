@@ -9,14 +9,16 @@
  */
 
 import {
-  type ResultType as Result,
-  createQiError,
+  type Result,
   failure,
-  getData,
   getError,
+  getValue,
   isFailure,
+  networkError,
   success,
-} from "@qi/core/base";
+  systemError,
+  validationError,
+} from "@qi/base";
 import type { MarketDataReader } from "../../../../dsl/interfaces";
 import {
   Exchange,
@@ -74,11 +76,10 @@ export class CCXTMCPReader implements MarketDataReader {
   ): Promise<Result<Price | Price[]>> {
     if (symbol.assetClass !== "crypto") {
       return failure(
-        createQiError(
-          "UNSUPPORTED_ASSET_CLASS",
-          `Only crypto assets are supported, got ${symbol.assetClass}`,
-          "VALIDATION",
-        ),
+        validationError(`Only crypto assets are supported, got ${symbol.assetClass}`, {
+          code: "UNSUPPORTED_ASSET_CLASS",
+          context: { assetClass: symbol.assetClass },
+        }),
       );
     }
 
@@ -97,7 +98,7 @@ export class CCXTMCPReader implements MarketDataReader {
         return ohlcvResult;
       }
 
-      const ohlcvData = getData(ohlcvResult);
+      const ohlcvData = getValue(ohlcvResult);
       const ohlcvArray = Array.isArray(ohlcvData) ? ohlcvData : [ohlcvData];
       return success(
         ohlcvArray
@@ -118,13 +119,19 @@ export class CCXTMCPReader implements MarketDataReader {
 
       if (!result.content || !result.content[0] || !result.content[0].text) {
         return failure(
-          createQiError("INVALID_RESPONSE", "Invalid response from CCXT MCP", "NETWORK"),
+          networkError("Invalid response from CCXT MCP", {
+            code: "INVALID_RESPONSE",
+          }),
         );
       }
 
       const tickerData = JSON.parse(result.content[0].text);
       if (!tickerData || !tickerData.last) {
-        return failure(createQiError("NO_DATA", "No price data available", "BUSINESS"));
+        return failure(
+          systemError("No price data available", {
+            code: "NO_DATA",
+          }),
+        );
       }
 
       return success(
@@ -136,7 +143,10 @@ export class CCXTMCPReader implements MarketDataReader {
       );
     } catch (error) {
       return failure(
-        createQiError("FETCH_ERROR", `Failed to fetch price data: ${error}`, "NETWORK"),
+        networkError(`Failed to fetch price data: ${error}`, {
+          code: "FETCH_ERROR",
+          cause: error,
+        }),
       );
     }
   }
@@ -148,11 +158,10 @@ export class CCXTMCPReader implements MarketDataReader {
   ): Promise<Result<Level1 | Level1[]>> {
     if (symbol.assetClass !== "crypto") {
       return failure(
-        createQiError(
-          "UNSUPPORTED_ASSET_CLASS",
-          `Only crypto assets are supported, got ${symbol.assetClass}`,
-          "VALIDATION",
-        ),
+        validationError(`Only crypto assets are supported, got ${symbol.assetClass}`, {
+          code: "UNSUPPORTED_ASSET_CLASS",
+          context: { assetClass: symbol.assetClass },
+        }),
       );
     }
 
@@ -169,7 +178,9 @@ export class CCXTMCPReader implements MarketDataReader {
 
     if (!result.content || !result.content[0] || !result.content[0].text) {
       return failure(
-        createQiError("INVALID_RESPONSE", "Invalid response from CCXT MCP", "NETWORK"),
+        networkError("Invalid response from CCXT MCP", {
+          code: "INVALID_RESPONSE",
+        }),
       );
     }
 
@@ -181,7 +192,11 @@ export class CCXTMCPReader implements MarketDataReader {
       orderBook.bids.length === 0 ||
       orderBook.asks.length === 0
     ) {
-      return failure(createQiError("NO_DATA", "No order book data available", "BUSINESS"));
+      return failure(
+        systemError("No order book data available", {
+          code: "NO_DATA",
+        }),
+      );
     }
 
     // Get best bid and ask
@@ -206,11 +221,10 @@ export class CCXTMCPReader implements MarketDataReader {
   ): Promise<Result<OHLCV | OHLCV[]>> {
     if (symbol.assetClass !== "crypto") {
       return failure(
-        createQiError(
-          "UNSUPPORTED_ASSET_CLASS",
-          `Only crypto assets are supported, got ${symbol.assetClass}`,
-          "VALIDATION",
-        ),
+        validationError(`Only crypto assets are supported, got ${symbol.assetClass}`, {
+          code: "UNSUPPORTED_ASSET_CLASS",
+          context: { assetClass: symbol.assetClass },
+        }),
       );
     }
 
@@ -243,13 +257,19 @@ export class CCXTMCPReader implements MarketDataReader {
 
     if (!result.content || !result.content[0] || !result.content[0].text) {
       return failure(
-        createQiError("INVALID_RESPONSE", "Invalid response from CCXT MCP", "NETWORK"),
+        networkError("Invalid response from CCXT MCP", {
+          code: "INVALID_RESPONSE",
+        }),
       );
     }
 
     const ohlcvData = JSON.parse(result.content[0].text);
     if (!ohlcvData || !Array.isArray(ohlcvData)) {
-      return failure(createQiError("NO_DATA", "No OHLCV data available", "BUSINESS"));
+      return failure(
+        systemError("No OHLCV data available", {
+          code: "NO_DATA",
+        }),
+      );
     }
 
     // Convert to OHLCV data classes
@@ -287,7 +307,7 @@ export class CCXTMCPReader implements MarketDataReader {
     if (isFailure(result)) {
       return result;
     }
-    const data = getData(result);
+    const data = getValue(result);
     const dataArray = Array.isArray(data) ? data : [data];
     return success(dataArray.filter((item) => item !== null));
   }
@@ -300,11 +320,9 @@ export class CCXTMCPReader implements MarketDataReader {
     // Level1 historical data is typically not available through CCXT
     // This would require polling at intervals, which is not practical
     return failure(
-      createQiError(
-        "UNSUPPORTED_OPERATION",
-        "Historical Level1 data not supported by CCXT MCP Server",
-        "BUSINESS",
-      ),
+      systemError("Historical Level1 data not supported by CCXT MCP Server", {
+        code: "UNSUPPORTED_OPERATION",
+      }),
     );
   }
 
@@ -317,7 +335,7 @@ export class CCXTMCPReader implements MarketDataReader {
     if (isFailure(result)) {
       return result;
     }
-    const data = getData(result);
+    const data = getValue(result);
     const dataArray = Array.isArray(data) ? data : [data];
     return success(dataArray.filter((item) => item !== null));
   }

@@ -10,14 +10,16 @@
  */
 
 import {
-  type ResultType as Result,
-  createQiError,
+  type Result,
   failure,
-  getData,
   getError,
+  getValue,
   isFailure,
+  networkError,
   success,
-} from "@qi/core/base";
+  systemError,
+  validationError,
+} from "@qi/base";
 import type { MarketDataReader } from "../../../../dsl/interfaces";
 import {
   Exchange,
@@ -65,10 +67,12 @@ export class TwelveDataMCPReader implements MarketDataReader {
   ): Promise<Result<Price | Price[]>> {
     if (symbol.assetClass !== this.assetClass) {
       return failure(
-        createQiError(
-          "UNSUPPORTED_ASSET_CLASS",
+        validationError(
           `Asset class mismatch. Expected ${this.assetClass}, got ${symbol.assetClass}`,
-          "VALIDATION",
+          {
+            code: "UNSUPPORTED_ASSET_CLASS",
+            context: { expected: this.assetClass, actual: symbol.assetClass },
+          },
         ),
       );
     }
@@ -96,14 +100,18 @@ export class TwelveDataMCPReader implements MarketDataReader {
 
         if (!result.content || !result.content[0] || !result.content[0].text) {
           return failure(
-            createQiError("INVALID_RESPONSE", "Invalid response from Twelve Data MCP", "NETWORK"),
+            networkError("Invalid response from Twelve Data MCP", {
+              code: "INVALID_RESPONSE",
+            }),
           );
         }
 
         const data = JSON.parse(result.content[0].text);
         if (!data.values || !Array.isArray(data.values)) {
           return failure(
-            createQiError("NO_DATA", "No historical price data available", "BUSINESS"),
+            systemError("No historical price data available", {
+              code: "NO_DATA",
+            }),
           );
         }
 
@@ -119,11 +127,10 @@ export class TwelveDataMCPReader implements MarketDataReader {
         );
       } catch (error) {
         return failure(
-          createQiError(
-            "FETCH_ERROR",
-            `Failed to fetch historical price data: ${error}`,
-            "NETWORK",
-          ),
+          networkError(`Failed to fetch historical price data: ${error}`, {
+            code: "FETCH_ERROR",
+            cause: error,
+          }),
         );
       }
     }
@@ -140,13 +147,19 @@ export class TwelveDataMCPReader implements MarketDataReader {
 
       if (!result.content || !result.content[0] || !result.content[0].text) {
         return failure(
-          createQiError("INVALID_RESPONSE", "Invalid response from Twelve Data MCP", "NETWORK"),
+          networkError("Invalid response from Twelve Data MCP", {
+            code: "INVALID_RESPONSE",
+          }),
         );
       }
 
       const priceData = JSON.parse(result.content[0].text);
       if (!priceData.price) {
-        return failure(createQiError("NO_DATA", "No price data available", "BUSINESS"));
+        return failure(
+          systemError("No price data available", {
+            code: "NO_DATA",
+          }),
+        );
       }
 
       return success(
@@ -158,7 +171,10 @@ export class TwelveDataMCPReader implements MarketDataReader {
       );
     } catch (error) {
       return failure(
-        createQiError("FETCH_ERROR", `Failed to fetch current price data: ${error}`, "NETWORK"),
+        networkError(`Failed to fetch current price data: ${error}`, {
+          code: "FETCH_ERROR",
+          cause: error,
+        }),
       );
     }
   }
@@ -170,10 +186,12 @@ export class TwelveDataMCPReader implements MarketDataReader {
   ): Promise<Result<Level1 | Level1[]>> {
     if (symbol.assetClass !== this.assetClass) {
       return failure(
-        createQiError(
-          "UNSUPPORTED_ASSET_CLASS",
+        validationError(
           `Asset class mismatch. Expected ${this.assetClass}, got ${symbol.assetClass}`,
-          "VALIDATION",
+          {
+            code: "UNSUPPORTED_ASSET_CLASS",
+            context: { expected: this.assetClass, actual: symbol.assetClass },
+          },
         ),
       );
     }
@@ -192,13 +210,19 @@ export class TwelveDataMCPReader implements MarketDataReader {
 
       if (!result.content || !result.content[0] || !result.content[0].text) {
         return failure(
-          createQiError("INVALID_RESPONSE", "Invalid response from Twelve Data MCP", "NETWORK"),
+          networkError("Invalid response from Twelve Data MCP", {
+            code: "INVALID_RESPONSE",
+          }),
         );
       }
 
       const quoteData = JSON.parse(result.content[0].text);
       if (!quoteData.bid || !quoteData.ask) {
-        return failure(createQiError("NO_DATA", "No Level1 quote data available", "BUSINESS"));
+        return failure(
+          systemError("No Level1 quote data available", {
+            code: "NO_DATA",
+          }),
+        );
       }
 
       return success(
@@ -212,7 +236,10 @@ export class TwelveDataMCPReader implements MarketDataReader {
       );
     } catch (error) {
       return failure(
-        createQiError("FETCH_ERROR", `Failed to fetch Level1 data: ${error}`, "NETWORK"),
+        networkError(`Failed to fetch Level1 data: ${error}`, {
+          code: "FETCH_ERROR",
+          cause: error,
+        }),
       );
     }
   }
@@ -224,10 +251,12 @@ export class TwelveDataMCPReader implements MarketDataReader {
   ): Promise<Result<OHLCV | OHLCV[]>> {
     if (symbol.assetClass !== this.assetClass) {
       return failure(
-        createQiError(
-          "UNSUPPORTED_ASSET_CLASS",
+        validationError(
           `Asset class mismatch. Expected ${this.assetClass}, got ${symbol.assetClass}`,
-          "VALIDATION",
+          {
+            code: "UNSUPPORTED_ASSET_CLASS",
+            context: { expected: this.assetClass, actual: symbol.assetClass },
+          },
         ),
       );
     }
@@ -264,13 +293,19 @@ export class TwelveDataMCPReader implements MarketDataReader {
 
       if (!result.content || !result.content[0] || !result.content[0].text) {
         return failure(
-          createQiError("INVALID_RESPONSE", "Invalid response from Twelve Data MCP", "NETWORK"),
+          networkError("Invalid response from Twelve Data MCP", {
+            code: "INVALID_RESPONSE",
+          }),
         );
       }
 
       const data = JSON.parse(result.content[0].text);
       if (!data.values || !Array.isArray(data.values)) {
-        return failure(createQiError("NO_DATA", "No OHLCV data available", "BUSINESS"));
+        return failure(
+          systemError("No OHLCV data available", {
+            code: "NO_DATA",
+          }),
+        );
       }
 
       // Convert to OHLCV data classes
@@ -289,7 +324,10 @@ export class TwelveDataMCPReader implements MarketDataReader {
       return success(interval ? ohlcvData : ohlcvData.length > 0 ? ohlcvData[0] : ohlcvData[0]);
     } catch (error) {
       return failure(
-        createQiError("FETCH_ERROR", `Failed to fetch OHLCV data: ${error}`, "NETWORK"),
+        networkError(`Failed to fetch OHLCV data: ${error}`, {
+          code: "FETCH_ERROR",
+          cause: error,
+        }),
       );
     }
   }
@@ -304,7 +342,7 @@ export class TwelveDataMCPReader implements MarketDataReader {
       return result;
     }
 
-    const priceData = getData(result);
+    const priceData = getValue(result);
     const priceArray = Array.isArray(priceData) ? priceData : [priceData];
     return success(priceArray.filter((item) => item !== null));
   }
@@ -316,11 +354,9 @@ export class TwelveDataMCPReader implements MarketDataReader {
   ): Promise<Result<Level1[]>> {
     // Historical Level1 data is typically not available
     return failure(
-      createQiError(
-        "UNSUPPORTED_OPERATION",
-        "Historical Level1 data not supported by Twelve Data MCP Server",
-        "BUSINESS",
-      ),
+      systemError("Historical Level1 data not supported by Twelve Data MCP Server", {
+        code: "UNSUPPORTED_OPERATION",
+      }),
     );
   }
 
@@ -334,7 +370,7 @@ export class TwelveDataMCPReader implements MarketDataReader {
       return result;
     }
 
-    const ohlcvData = getData(result);
+    const ohlcvData = getValue(result);
     const ohlcvArray = Array.isArray(ohlcvData) ? ohlcvData : [ohlcvData];
     return success(ohlcvArray.filter((item) => item !== null));
   }
@@ -362,12 +398,18 @@ export class TwelveDataMCPReader implements MarketDataReader {
   private validateTimeInterval(timeInterval: TimeInterval): Result<void> {
     if (timeInterval.startDate >= timeInterval.endDate) {
       return failure(
-        createQiError("INVALID_TIME_INTERVAL", "Start date must be before end date", "VALIDATION"),
+        validationError("Start date must be before end date", {
+          code: "INVALID_TIME_INTERVAL",
+          context: { startDate: timeInterval.startDate, endDate: timeInterval.endDate },
+        }),
       );
     }
     if (timeInterval.endDate > new Date()) {
       return failure(
-        createQiError("INVALID_TIME_INTERVAL", "End date cannot be in the future", "VALIDATION"),
+        validationError("End date cannot be in the future", {
+          code: "INVALID_TIME_INTERVAL",
+          context: { endDate: timeInterval.endDate, now: new Date() },
+        }),
       );
     }
     return success(undefined);

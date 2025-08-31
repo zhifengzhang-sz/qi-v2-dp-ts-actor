@@ -7,8 +7,8 @@
  * Operates on pure DSL data types.
  */
 
-import type { ResultType as Result } from "@qi/core/base";
-import { createQiError, failure, success } from "@qi/core/base";
+import type { Result } from "@qi/base";
+import { create, failure, success, validationError } from "@qi/base";
 import type { Level1 } from "../dsl/types.js";
 
 /**
@@ -17,12 +17,18 @@ import type { Level1 } from "../dsl/types.js";
 export function getSpread(level1: Level1): Result<number> {
   if (level1.askPrice <= 0 || level1.bidPrice <= 0) {
     return failure(
-      createQiError("INVALID_PRICE", "Bid and ask prices must be positive", "VALIDATION"),
+      validationError("Bid and ask prices must be positive", {
+        code: "INVALID_PRICE",
+        context: { bidPrice: level1.bidPrice, askPrice: level1.askPrice },
+      }),
     );
   }
   if (level1.askPrice <= level1.bidPrice) {
     return failure(
-      createQiError("INVALID_SPREAD", "Ask price must be greater than bid price", "VALIDATION"),
+      validationError("Ask price must be greater than bid price", {
+        code: "INVALID_SPREAD",
+        context: { bidPrice: level1.bidPrice, askPrice: level1.askPrice },
+      }),
     );
   }
   return success(level1.askPrice - level1.bidPrice);
@@ -34,12 +40,18 @@ export function getSpread(level1: Level1): Result<number> {
 export function getMidPrice(level1: Level1): Result<number> {
   if (level1.askPrice <= 0 || level1.bidPrice <= 0) {
     return failure(
-      createQiError("INVALID_PRICE", "Bid and ask prices must be positive", "VALIDATION"),
+      validationError("Bid and ask prices must be positive", {
+        code: "INVALID_PRICE",
+        context: { bidPrice: level1.bidPrice, askPrice: level1.askPrice },
+      }),
     );
   }
   if (level1.askPrice <= level1.bidPrice) {
     return failure(
-      createQiError("INVALID_SPREAD", "Ask price must be greater than bid price", "VALIDATION"),
+      validationError("Ask price must be greater than bid price", {
+        code: "INVALID_SPREAD",
+        context: { bidPrice: level1.bidPrice, askPrice: level1.askPrice },
+      }),
     );
   }
   return success((level1.bidPrice + level1.askPrice) / 2);

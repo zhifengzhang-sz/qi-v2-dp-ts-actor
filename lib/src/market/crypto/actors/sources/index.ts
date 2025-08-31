@@ -7,8 +7,5 @@
  * These actors read market data from various sources.
  */
 
-// CoinGecko MCP Reader
-export * from "./CoinGeckoMCPReader";
-
 // CCXT MCP Reader
 export * from "./CCXTMCPReader";

@@ -29,7 +29,7 @@ import {
 } from "@qi/core";
 
 // QiCore Result pattern
-import { getData, isSuccess } from "@qi/core/base";
+import { getValue, isSuccess } from "@qi/base";
 
 // Domain functions (business logic)
 import { getMarketId, getMidPrice, getSpread, isCash, isDerivative } from "@qi/dp/domain";
@@ -88,8 +88,8 @@ const spreadResult = getSpread(level1Data);
 const midPriceResult = getMidPrice(level1Data);
 
 if (isSuccess(spreadResult) && isSuccess(midPriceResult)) {
-  const spread = getData(spreadResult);
-  const midPrice = getData(midPriceResult);
+  const spread = getValue(spreadResult);
+  const midPrice = getValue(midPriceResult);
   if (spread !== null && midPrice !== null) {
     console.log(`   Spread: $${spread.toFixed(2)}`);
     console.log(`   Mid Price: $${midPrice.toFixed(2)}`);

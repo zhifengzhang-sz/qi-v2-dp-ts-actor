@@ -10,14 +10,16 @@
  */
 
 import {
-  type ResultType as Result,
-  createQiError,
+  type Result,
   failure,
-  getData,
   getError,
+  getValue,
   isFailure,
+  networkError,
   success,
-} from "@qi/core/base";
+  systemError,
+  validationError,
+} from "@qi/base";
 import type { MarketDataReader } from "../../../../dsl/interfaces";
 import {
   Exchange,
@@ -62,11 +64,10 @@ export class AlphaVantageMCPReader implements MarketDataReader {
   ): Promise<Result<Price | Price[]>> {
     if (symbol.assetClass !== "equity") {
       return failure(
-        createQiError(
-          "UNSUPPORTED_ASSET_CLASS",
-          `Only equity assets are supported, got ${symbol.assetClass}`,
-          "VALIDATION",
-        ),
+        validationError(`Only equity assets are supported, got ${symbol.assetClass}`, {
+          code: "UNSUPPORTED_ASSET_CLASS",
+          context: { assetClass: symbol.assetClass },
+        }),
       );
     }
 
@@ -89,14 +90,18 @@ export class AlphaVantageMCPReader implements MarketDataReader {
 
         if (!result.content || !result.content[0] || !result.content[0].text) {
           return failure(
-            createQiError("INVALID_RESPONSE", "Invalid response from Alpha Vantage MCP", "NETWORK"),
+            networkError("Invalid response from Alpha Vantage MCP", {
+              code: "INVALID_RESPONSE",
+            }),
           );
         }
 
         const data = JSON.parse(result.content[0].text);
         if (!data["Time Series (Daily)"]) {
           return failure(
-            createQiError("NO_DATA", "No historical price data available", "BUSINESS"),
+            systemError("No historical price data available", {
+              code: "NO_DATA",
+            }),
           );
         }
 
@@ -119,11 +124,10 @@ export class AlphaVantageMCPReader implements MarketDataReader {
         return success(prices);
       } catch (error) {
         return failure(
-          createQiError(
-            "FETCH_ERROR",
-            `Failed to fetch historical price data: ${error}`,
-            "NETWORK",
-          ),
+          networkError(`Failed to fetch historical price data: ${error}`, {
+            code: "FETCH_ERROR",
+            cause: error,
+          }),
         );
       }
     }
@@ -140,7 +144,9 @@ export class AlphaVantageMCPReader implements MarketDataReader {
 
       if (!result.content || !result.content[0] || !result.content[0].text) {
         return failure(
-          createQiError("INVALID_RESPONSE", "Invalid response from Alpha Vantage MCP", "NETWORK"),
+          networkError("Invalid response from Alpha Vantage MCP", {
+            code: "INVALID_RESPONSE",
+          }),
         );
       }
 
@@ -148,7 +154,11 @@ export class AlphaVantageMCPReader implements MarketDataReader {
       const quote = data["Global Quote"];
 
       if (!quote || !quote["05. price"]) {
-        return failure(createQiError("NO_DATA", "No price data available", "BUSINESS"));
+        return failure(
+          systemError("No price data available", {
+            code: "NO_DATA",
+          }),
+        );
       }
 
       return success(
@@ -160,7 +170,10 @@ export class AlphaVantageMCPReader implements MarketDataReader {
       );
     } catch (error) {
       return failure(
-        createQiError("FETCH_ERROR", `Failed to fetch current price data: ${error}`, "NETWORK"),
+        networkError(`Failed to fetch current price data: ${error}`, {
+          code: "FETCH_ERROR",
+          cause: error,
+        }),
       );
     }
   }
@@ -172,10 +185,12 @@ export class AlphaVantageMCPReader implements MarketDataReader {
   ): Promise<Result<Level1 | Level1[]>> {
     // Alpha Vantage does not provide Level1 bid/ask data
     return failure(
-      createQiError(
-        "UNSUPPORTED_OPERATION",
+      systemError(
         `Level1 data not available for ${symbol.ticker}. Alpha Vantage does not provide real-time bid/ask data. Consider using IEX Cloud or TwelveData for Level1 data.`,
-        "BUSINESS",
+        {
+          code: "UNSUPPORTED_OPERATION",
+          context: { ticker: symbol.ticker, server: "Alpha Vantage MCP" },
+        },
       ),
     );
   }
@@ -187,11 +202,10 @@ export class AlphaVantageMCPReader implements MarketDataReader {
   ): Promise<Result<OHLCV | OHLCV[]>> {
     if (symbol.assetClass !== "equity") {
       return failure(
-        createQiError(
-          "UNSUPPORTED_ASSET_CLASS",
-          `Only equity assets are supported, got ${symbol.assetClass}`,
-          "VALIDATION",
-        ),
+        validationError(`Only equity assets are supported, got ${symbol.assetClass}`, {
+          code: "UNSUPPORTED_ASSET_CLASS",
+          context: { assetClass: symbol.assetClass },
+        }),
       );
     }
 
@@ -207,13 +221,19 @@ export class AlphaVantageMCPReader implements MarketDataReader {
 
       if (!result.content || !result.content[0] || !result.content[0].text) {
         return failure(
-          createQiError("INVALID_RESPONSE", "Invalid response from Alpha Vantage MCP", "NETWORK"),
+          networkError("Invalid response from Alpha Vantage MCP", {
+            code: "INVALID_RESPONSE",
+          }),
         );
       }
 
       const data = JSON.parse(result.content[0].text);
       if (!data["Time Series (Daily)"]) {
-        return failure(createQiError("NO_DATA", "No OHLCV data available", "BUSINESS"));
+        return failure(
+          systemError("No OHLCV data available", {
+            code: "NO_DATA",
+          }),
+        );
       }
 
       const timeSeries = data["Time Series (Daily)"];
@@ -253,7 +273,10 @@ export class AlphaVantageMCPReader implements MarketDataReader {
       return success(ohlcvData);
     } catch (error) {
       return failure(
-        createQiError("FETCH_ERROR", `Failed to fetch OHLCV data: ${error}`, "NETWORK"),
+        networkError(`Failed to fetch OHLCV data: ${error}`, {
+          code: "FETCH_ERROR",
+          cause: error,
+        }),
       );
     }
   }
@@ -268,7 +291,7 @@ export class AlphaVantageMCPReader implements MarketDataReader {
       return result;
     }
 
-    const priceData = getData(result);
+    const priceData = getValue(result);
     const priceArray = Array.isArray(priceData) ? priceData : [priceData];
     return success(priceArray.filter((item) => item !== null));
   }
@@ -280,11 +303,9 @@ export class AlphaVantageMCPReader implements MarketDataReader {
   ): Promise<Result<Level1[]>> {
     // Historical Level1 data is not available from Alpha Vantage
     return failure(
-      createQiError(
-        "UNSUPPORTED_OPERATION",
-        "Historical Level1 data not supported by Alpha Vantage MCP Server",
-        "BUSINESS",
-      ),
+      systemError("Historical Level1 data not supported by Alpha Vantage MCP Server", {
+        code: "UNSUPPORTED_OPERATION",
+      }),
     );
   }
 
@@ -298,7 +319,7 @@ export class AlphaVantageMCPReader implements MarketDataReader {
       return result;
     }
 
-    const ohlcvData = getData(result);
+    const ohlcvData = getValue(result);
     const ohlcvArray = Array.isArray(ohlcvData) ? ohlcvData : [ohlcvData];
     return success(ohlcvArray.filter((item) => item !== null));
   }
@@ -310,12 +331,18 @@ export class AlphaVantageMCPReader implements MarketDataReader {
   private validateTimeInterval(timeInterval: TimeInterval): Result<void> {
     if (timeInterval.startDate >= timeInterval.endDate) {
       return failure(
-        createQiError("INVALID_INTERVAL", "Start date must be before end date", "VALIDATION"),
+        validationError("Start date must be before end date", {
+          code: "INVALID_INTERVAL",
+          context: { startDate: timeInterval.startDate, endDate: timeInterval.endDate },
+        }),
       );
     }
     if (timeInterval.endDate > new Date()) {
       return failure(
-        createQiError("INVALID_INTERVAL", "End date cannot be in the future", "VALIDATION"),
+        validationError("End date cannot be in the future", {
+          code: "INVALID_INTERVAL",
+          context: { endDate: timeInterval.endDate, now: new Date() },
+        }),
       );
     }
     return success(undefined);
